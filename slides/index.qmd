@@ -307,13 +307,13 @@ Key point: You don’t have to write most of these files by hand
 
 ## Demo 👀: Create an R package
 
-```{r}
+```
 usethis::create_package()
 ```
 
 ## Your turn 👩‍💻: Create an R package
 
-```{r}
+```
 usethis::create_package()
 ```
 
@@ -345,13 +345,13 @@ Introduce the process of developing it (run devtools often!)
 
 1. Create a vignette:
 
-```{r}
+```
 usethis::use_vignette("intro")
 ```
 
 1. Add a test:
 
-```{r}
+```
 usethis::use_testthat()
 usethis::use_test("hello")
 ```
@@ -376,8 +376,7 @@ Customise `DESCRIPTION` metadata.
 - GitHub
 - Local install
 
-```{r}
-#| eval: false
+```
 usethis::use_git()
 usethis::use_github()
 ```
