@@ -1,0 +1,412 @@
+---
+title: "Build your own toolbox 🧰"
+subtitle: "R package development"
+author: "[Dr Rhian Davies](mailto:statsrhian@gmail.com)"
+date: 2025-09-03
+date-format: "YYYY-MM-DD"
+css: styles.css
+format: revealjs
+brand: ../_brand.yml
+execute:
+  echo: false
+  eval: false
+footer: "{{< fa brands github >}} {{< fa brands bluesky >}} {{< fa brands mastodon >}} {{< fa brands linkedin >}} [@statsRhian](https://bsky.app/profile/statsrhian.bsky.social) &nbsp; {{< fa laptop-code >}} [statsrhian.github.io/build-r-pkg](https://statsrhian.github.io/build-r-pkg)"
+
+
+---
+
+# Welcome
+
+## What is an R package?
+
+- A toolbox of useful functions
+
+## Why build one?
+
+- Reproducible
+- Reuseable
+- Share your code
+- It's fun and empowering
+
+## Real-world examples (including from NHS / academia).
+
+- {changepoint}
+
+## Myths
+
+You don't have to
+
+- have lots of original functions
+- start from scratch
+- make it perfect 
+- put it on CRAN
+
+
+:::{.notes}
+- Small packages are fine!
+- Build on the work of others
+- Package warnings are okay!
+:::
+
+# Your personal toolbox
+
+It’s not just any box of random tools — it’s a kit that someone else should be able to pick up and use immediately without calling you for instructions.
+
+## What's in your toolbox?
+
+:::::: {.columns}
+::: {.column}
+```{=html}
+<pre>
+biketools/
+├─ DESCRIPTION
+├─ NAMESPACE
+├─ R/
+│  ├─ chain-braker.R
+│  ├─ multitool.R
+│  ├─ pedal-wrench.R
+│  ├─ tyre-levers.R
+├─ man/
+│  ├─ chain-braker.Rd
+│  ├─ multitool.Rd
+│  ├─ pedal-wrench.Rd
+│  ├─ tyre-levers.Rd
+├─ tests/
+├─ vignettes/
+</pre>
+```
+:::
+::: {.column}
+![](img/toolbox-closed.jpg){fig-alt="TODO: Add alt text."}
+:::
+::: 
+
+:::{.notes}
+It’s not just any box of random tools — it’s a kit that someone else should be able to pick up and use immediately without calling you for instructions.
+:::
+
+
+## `DESCRIPTION`
+
+:::::: {.columns}
+::: {.column}
+```{=html}
+<pre>
+biketools/
+├─ <span class="highlight">DESCRIPTION</span>
+├─ NAMESPACE
+├─ R/
+│  ├─ chain-braker.R
+│  ├─ multitool.R
+│  ├─ pedal-wrench.R
+│  ├─ tyre-levers.R
+├─ man/
+│  ├─ chain-braker.Rd
+│  ├─ multitool.Rd
+│  ├─ pedal-wrench.Rd
+│  ├─ tyre-levers.Rd
+├─ tests/
+├─ vignettes/
+</pre>
+```
+:::
+::: {.column}
+![](img/toolbox-label.jpg){fig-alt="TODO: Add alt text."}
+:::
+::: 
+
+:::{.notes}
+
+It lists the brand name (package name), who built it (author), what it’s for (description), model/version number, and what other kits it needs to work with (dependencies).
+
+Without this, no one knows what kind of work the toolbox is meant for — is it for bikes, plumbing, or electronics?
+:::
+
+## `R/` folder
+
+:::::: {.columns}
+::: {.column}
+```{=html}
+<pre>
+biketools/
+├─ DESCRIPTION
+├─ NAMESPACE
+├─ <span class="highlight">R/
+│  ├─ chain-braker.R
+│  ├─ multitool.R
+│  ├─ pedal-wrench.R
+│  ├─ tyre-levers.R</span>
+├─ man/
+│  ├─ chain-braker.Rd
+│  ├─ multitool.Rd
+│  ├─ pedal-wrench.Rd
+│  ├─ tyre-levers.Rd
+├─ tests/
+├─ vignettes/
+</pre>
+```
+:::
+::: {.column}
+![](img/toolbox-tools.jpg){fig-alt="TODO: Add alt text."}
+:::
+::: 
+
+:::{.notes}
+The tools themselves — the real functional parts.
+
+This is where the actual tools (functions) live.
+
+Each tool has a job — hammer, screwdriver, drill — each function solves a specific problem.
+
+The better organised and labelled they are, the faster someone can find what they need.
+:::
+
+
+## `man/` folder
+
+:::::: {.columns}
+::: {.column}
+```{=html}
+<pre>
+biketools/
+├─ DESCRIPTION
+├─ NAMESPACE
+├─ R/
+│  ├─ chain-braker.R
+│  ├─ multitool.R
+│  ├─ pedal-wrench.R
+│  ├─ tyre-levers.R
+├─ <span class="highlight">man/
+│  ├─ chain-braker.Rd
+│  ├─ multitool.Rd
+│  ├─ pedal-wrench.Rd
+│  ├─ tyre-levers.Rd</span>
+├─ tests/
+├─ vignettes/
+</pre>
+```
+:::
+::: {.column}
+![](img/toolbox-manual.jpg){fig-alt="TODO: Add alt text."}
+:::
+::: 
+
+:::{.notes}
+The literal instruction manuals
+
+For every tool, there’s a laminated instruction card stored in the lid pocket.
+
+These tell you what the tool does, how to hold it, and give examples of using it safely.
+
+Without these, someone might use a chisel as a screwdriver and wonder why things break.
+:::
+
+
+## `NAMESPACE`
+
+:::::: {.columns}
+::: {.column}
+```{=html}
+<pre>
+biketools/
+├─ DESCRIPTION
+├─ <span class="highlight">NAMESPACE</span>
+├─ R/
+│  ├─ chain-braker.R
+│  ├─ multitool.R
+│  ├─ pedal-wrench.R
+│  ├─ tyre-levers.R
+├─ man/
+│  ├─ chain-braker.Rd
+│  ├─ multitool.Rd
+│  ├─ pedal-wrench.Rd
+│  ├─ tyre-levers.Rd
+├─ tests/
+├─ vignettes/
+</pre>
+```
+:::
+::: {.column}
+![](img/toolbox-shelf.jpg){fig-alt="TODO: Add alt text."}
+:::
+::: 
+
+:::{.notes}
+
+
+- Some tools are kept in plain sight for anyone to grab (exported functions).
+
+- Others are hidden in a secret compartment only you know about (internal functions).
+
+- Sometimes your toolbox doesn’t have everything — you borrow tools from your friends’ toolboxes (imports).
+
+“If someone uses my wrench tool, and it needs a special head from the Allen Keys kit, get it from there.”
+
+All the right borrowed tools are fetched automatically when someone uses your toolbox.
+
+Without it, your user might open your toolbox and find half the tools missing.
+
+Inside the lid is a diagram showing which tools are available to the public and where they came from.
+
+:::
+
+## Extra bits
+
+::::: {.columns}
+::: {.column}
+- tests
+- vignettes
+- example data
+- {pkgdown} website
+- hex sticker
+
+:::
+::: {.column}
+:::
+::: 
+
+:::{.notes}
+
+- Do my tools work correctly?
+- How to do a basic bike service
+- Spare bit of chain for trying chain breaker
+- Glossy website
+- Cool paint job
+
+:::
+
+## Package check
+
+Inspect your toolbox before lending it out!
+
+
+- Is there anything in there that shouldn't be in there? :check:
+- Is it too heavy?
+- Does it have all the right instructions?
+
+:::{.notes}
+
+An inspection before lending the box — ensures all tools are there and safe.
+
+Before selling or lending the toolbox, the inspector goes through each tool, checks the labels, makes sure nothing’s missing or rusty, and confirms all the parts match the manufacturer’s description.
+
+If something fails inspection, you get a report telling you exactly what to fix.
+
+- Can someone carry the toolbox?
+- Is there anything in there that shouldn't be in there?
+- Is it too full?
+- Does it have all the right instructions?
+
+:::
+
+## Explore {dplyr}
+
+Key point: You don’t have to write most of these files by hand
+
+# Let's build 🛠️
+
+## Demo 👀: Create an R package
+
+```{r}
+usethis::create_package()
+```
+
+## Your turn 👩‍💻: Create an R package
+
+```{r}
+usethis::create_package()
+```
+
+## Demo 👀: Add a function
+
+## Your turn 👩‍💻: Add a function
+
+## Demo 👀: Document your function
+
+## Roxygen
+
+- Run `roxygen2::document()`
+
+## Your turn 👩‍💻: Document your function
+
+1. Add roxygen strings
+
+1. Run `devtools::document()`
+
+1. Run `devtools::install()`
+
+1. View the help file `?test`
+
+
+
+Introduce the process of developing it (run devtools often!)
+
+1. Add a second function. INTERNAL
+
+1. Create a vignette:
+
+```{r}
+usethis::use_vignette("intro")
+```
+
+1. Add a test:
+
+```{r}
+usethis::use_testthat()
+usethis::use_test("hello")
+```
+
+1.
+Customise `DESCRIPTION` metadata.
+
+## Developer process
+
+- edit
+- document()
+- build()
+- check()
+
+## Package check
+
+- Don't worry if it doesn't all pass
+
+## Sharing it
+
+- What is CRAN
+- GitHub
+- Local install
+
+```{r}
+#| eval: false
+usethis::use_git()
+usethis::use_github()
+```
+
+# Wrap up
+
+## Recap of components
+
+Show the “package lifecycle” diagram:
+
+Create
+
+Add functions/docs
+
+Test
+
+Share
+
+## Just one more thing...
+
+- One thing I learned…
+
+- One thing I want to try later…
+
+- One thing I still have a question about…
+
+## Resources
+
+
+
+
+

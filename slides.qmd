@@ -1,0 +1,10 @@
+---
+title: "👩‍🏫 Slides"
+---
+
+
+<p align="center">
+<iframe src="slides/index.html" width="100%" height = "400px"></iframe>
+</p>
+
+🔍 View [full-size](https://statsrhian.github.io/build-r-pkg/slides/index.html)

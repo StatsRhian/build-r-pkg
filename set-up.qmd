@@ -1,0 +1,14 @@
+---
+title: "👩‍💻 Set up"
+---
+
+You'll need the following R packages installed
+
+- {devtools}
+- {usethis}
+
+You can check if everything is set up correctly by running:
+```
+> devtools::has_devel()
+Your system is ready to build packages!
+```

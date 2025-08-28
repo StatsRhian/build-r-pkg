@@ -1,0 +1,16 @@
+---
+title: "📚 Resources"
+---
+
+## Books
+
+- [R Packages](https://r-pkgs.org/)
+- [rOpenSci Packaging Guide](https://devguide.ropensci.org/pkg_building.html)
+
+## Blog posts
+
+- [Make the simplest R package with {pico}](https://www.rostrum.blog/posts/2021-04-18-pico-pkg/)
+
+## Cheatsheet
+
+- [Package development](https://rstudio.github.io/cheatsheets/html/package-development.html)

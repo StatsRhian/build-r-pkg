@@ -1,0 +1,31 @@
+project:
+  type: website
+
+website:
+  title: "Learn to build an R package"
+  navbar:
+    left: 
+      - index.qmd
+      - slides.qmd
+      - set-up.qmd
+      - resources.qmd 
+    tools:
+      - icon: github
+        menu:
+          - text: Source Code
+            href:  https://github.com/StatsRhian/workshop-build-r-pkg
+          - text: Make an issue
+            href:  https://github.com/StatsRhian/workshop-build-r-pkg/issues
+  page-footer:
+    center: |
+      Developed by <a href="https://rhian.rbind.io/">Rhian Davies</a> 🌱. Built with <a href="https://quarto.org/">Quarto</a> 💜.
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    toc: true
+
+
+

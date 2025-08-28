@@ -1,0 +1,30 @@
+---
+title: "👋 Welcome"
+---
+
+## Workshop outline
+
+Building an R package might sound intimidating, but it’s more approachable than you think. As statisticians, we often use R for exploratory analysis, developing new models, and comparing methods. By bundling your code into a package, you create a streamlined and user-friendly way for others to use your methods. This is especially valuable if you’re distributing software or data alongside a research paper. Learning to build R packages not only makes your work more impactful but also encourages reproducibility and wider adoption of your ideas. 
+
+During the session we will learn about what goes inside an R package. We'll use the {usethis} package to build our very own R package from scratch including documentation. 
+
+
+The _confidence_ to build an R package!
+
+## Learning Objectives
+
+By the end of the session, attendees will 
+
+- understand the main elements of an R package 
+
+- be able to add functions to an R package and document them 
+
+- understand how R packages can be shared with others 
+
+- have built their first R package
+
+
+## Prerequisites
+
+Attendees are expected to have a basic knowledge of R, and will have ideally written a simple R function before but this isn't essential to attend. 
+

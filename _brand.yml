@@ -1,0 +1,40 @@
+meta:
+  name: statsRhian
+  link:
+    home: https://rhian.rbind.io
+    github: https://github.com/statsrhian
+    linkedin: https://www.linkedin.com/in/statsrhian/
+    bluesky: https://bsky.app/profile/statsrhian.bsky.social
+    mastodon: https://fosstodon.org/@statsrhian
+
+color:
+  palette:
+    blackcurrant: "#3e3242"
+    goldengrass: "#dea521"
+    rhino: "#28435d"
+    tasman: "#d1dbd1"
+    edgewater: "#d7e9e3"
+    grey: "#dfe0df"
+
+  # Theme colors
+  primary: blackcurrant
+  secondary: goldengrass
+  background: grey
+  foreground: rhino
+  success: goldengrass
+  info: goldengrass
+  warning: goldengrass
+  danger: goldengrass
+
+typography:
+  fonts:
+    - family: Averia Serif Libre
+      source: google
+    - family: Open Sans
+      source: google
+    - family: Fira Code
+      source: bunny
+  base: Open Sans
+  headings: Averia Serif Libre
+  monospace: Fira Code
+
