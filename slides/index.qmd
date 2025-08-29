@@ -14,6 +14,29 @@ footer: "{{< fa brands github >}} {{< fa brands bluesky >}} {{< fa brands mastod
 
 ---
 
+<!--- TO FIX
+
+open with a personal story: “When I first started, I kept copy-pasting functions across projects. Then I realised… a package is just a tidy toolbox!” → hooks people in emotionally.
+
+Active learning: Add short “think-pair-share” moments (“What’s one function you’d put in your personal package?”). Keeps energy up.
+
+Next steps slide: End with clear “where to go from here” (Hadley’s R Packages book, r-pkgs.org, pkgdown, joining rOpenSci, etc.). Helps motivated learners continue.
+
+- should I mention devtools::load_all()
+- tidy notes
+- add alt text
+- teach IMPORTS?
+- remove vignette?
+
+Engagement / reflection
+
+I love your hidden reflective slide at the end. I’d actually bring it back in! Even a quick “turn to your neighbour and share one thing you learned” helps solidify learning.
+
+Maybe include a slide with common pitfalls/troubleshooting (“I forgot to run document(), why doesn’t help work?”).
+
+
+--->
+
 ## Set-up 👩‍💻
 
 - Welcome! We'll start the workshop shortly
@@ -65,20 +88,6 @@ It’s not just any box of random tools — it’s a kit that someone else shoul
 ```{=html}
 <pre>
 biketools/
-├─ DESCRIPTION
-├─ NAMESPACE
-├─ R/
-│  ├─ chain-braker.R
-│  ├─ multitool.R
-│  ├─ pedal-wrench.R
-│  ├─ tyre-levers.R
-├─ man/
-│  ├─ chain-braker.Rd
-│  ├─ multitool.Rd
-│  ├─ pedal-wrench.Rd
-│  ├─ tyre-levers.Rd
-├─ tests/
-├─ vignettes/
 </pre>
 ```
 :::
@@ -100,19 +109,6 @@ It’s not just any box of random tools, it’s a kit that someone else should b
 <pre>
 biketools/
 ├─ <span class="highlight">DESCRIPTION</span>
-├─ NAMESPACE
-├─ R/
-│  ├─ chain-braker.R
-│  ├─ multitool.R
-│  ├─ pedal-wrench.R
-│  ├─ tyre-levers.R
-├─ man/
-│  ├─ chain-braker.Rd
-│  ├─ multitool.Rd
-│  ├─ pedal-wrench.Rd
-│  ├─ tyre-levers.Rd
-├─ tests/
-├─ vignettes/
 </pre>
 ```
 :::
@@ -136,24 +132,16 @@ Without this, no one knows what kind of work the toolbox is meant for, is it for
 <pre>
 biketools/
 ├─ DESCRIPTION
-├─ NAMESPACE
 ├─ <span class="highlight">R/
 │  ├─ chain-braker.R
 │  ├─ multitool.R
 │  ├─ pedal-wrench.R
 │  ├─ tyre-levers.R</span>
-├─ man/
-│  ├─ chain-braker.Rd
-│  ├─ multitool.Rd
-│  ├─ pedal-wrench.Rd
-│  ├─ tyre-levers.Rd
-├─ tests/
-├─ vignettes/
 </pre>
 ```
 :::
 ::: {.column}
-![](img/toolbox-tools.jpg){fig-alt="TODO: Add alt text."}
+![](img/toolbox-tools.png){fig-alt="TODO: Add alt text."}
 :::
 ::: 
 
@@ -174,7 +162,6 @@ The better organised and labelled they are, the faster someone can find what the
 <pre>
 biketools/
 ├─ DESCRIPTION
-├─ NAMESPACE
 ├─ R/
 │  ├─ chain-braker.R
 │  ├─ multitool.R
@@ -185,8 +172,6 @@ biketools/
 │  ├─ multitool.Rd
 │  ├─ pedal-wrench.Rd
 │  ├─ tyre-levers.Rd</span>
-├─ tests/
-├─ vignettes/
 </pre>
 ```
 :::
@@ -208,7 +193,6 @@ These tell you what the tool does, how to hold it, and give examples of using it
 <pre>
 biketools/
 ├─ DESCRIPTION
-├─ <span class="highlight">NAMESPACE</span>
 ├─ R/
 │  ├─ chain-braker.R
 │  ├─ multitool.R
@@ -219,8 +203,7 @@ biketools/
 │  ├─ multitool.Rd
 │  ├─ pedal-wrench.Rd
 │  ├─ tyre-levers.Rd
-├─ tests/
-├─ vignettes/
+├─ <span class="highlight">NAMESPACE</span>
 </pre>
 ```
 :::
@@ -244,15 +227,34 @@ biketools/
 
 ::::: {.columns}
 ::: {.column}
-- tests
-- vignettes
-- example data
-- {pkgdown} website
-- hex sticker
-
+```{=html}
+<pre>
+biketools/
+├─ DESCRIPTION
+├─ R/
+│  ├─ chain-braker.R
+│  ├─ multitool.R
+│  ├─ pedal-wrench.R
+│  ├─ tyre-levers.R
+├─ man/
+│  ├─ chain-braker.Rd
+│  ├─ multitool.Rd
+│  ├─ pedal-wrench.Rd
+│  ├─ tyre-levers.Rd
+├─ NAMESPACE
+├─ <span class="highlight">data/
+├─ pkgdown/
+├─ tests/
+├─ vignettes/
+├─ READMD.md
+├─ NEWS.md
+├─ hex-sticker.png</span>
+</pre>
+```
 :::
+
 ::: {.column}
-![](img/toolbox-closed.jpg){fig-alt="TODO: Add alt text."}
+![](img/toolbox-extras.jpg){fig-alt="TODO: Add alt text."}
 :::
 ::: 
 
@@ -272,10 +274,21 @@ biketools/
 
 ## 👩‍💻 Create an R package
 
-- `usethis::create_package()`
+- Run `usethis::create_package("sums")`
 - Open the `DESCRIPTION` file and customise it
+- Run `usethis::use_mit_license()`
+- Run `devtools::install()`
 
 ## 👀 Add a function
+
+:::{.notes}
+
+Need to introduce adding functions without getting hung up on 
+`#' @export` and `NAMESPACE`
+
+Could manually edit it FIRST `export(hello)` and then show later how it's generated
+
+:::
 
 ## 👩‍💻 Add a function
 
@@ -295,10 +308,28 @@ print("My first function!")
 
 ## 👀 Document your function
 
+:::{.notes}
+
+```
+#' Add together two numbers
+#' 
+#' @param x A number.
+#' @param y A number.
+#' @returns A numeric vector.
+#' @examples
+#' add(1, 1)
+#' add(10, 1)
+#' @export
+add <- function(x, y) {
+  x + y
+}
+```
+
+:::
 
 ## 👩‍💻 Document your function
 
-1. Add roxygen strings
+1. Add some {roxygen2} strings
 
 1. Run `devtools::document()`
 
@@ -310,7 +341,7 @@ print("My first function!")
 
 1.  edit
 1. `devtools::document()`
-1. `devtools::build()`
+1. `devtools::install()`
 1. `devtools::check()`
 
 ## Package check
@@ -344,25 +375,36 @@ If something fails inspection, you get a report telling you exactly what to fix.
 
 ## 👩‍💻 Choose your own adventure
 
-- Add a second function
+::::: {.columns}
+::: {.column}
 
-- Create a vignette:
 
-`usethis::use_vignette("intro")`
+- Create a second function
 
-- Add a test:
+- Create a vignette `usethis::use_vignette("times-tables")`
 
+- Add a test 
+
+- Create a [hex sticker](https://connect.thinkr.fr/hexmake/)
 ```
 usethis::use_testthat()
 usethis::use_test("hello")
 ```
 
 
+:::
+
+::: {.column}
+![](img/hex-RSSConf2025.png){fig-alt="TODO: Add alt text."}
+:::
+::: 
+
+
 ## Share your package
 
 - CRAN: `install.packages("biketools.zip")`
-- GitHub: `devtools::install_github("statsrhian/biketools.zip")`
-- Local install: `devtools::install_local("biketools.zip")`
+- GitHub: `devtools::install_github("statsrhian/biketools")`
+- Local install: `devtools::install_local("biketools")`
 
 
 <!---
