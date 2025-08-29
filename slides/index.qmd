@@ -12,8 +12,17 @@ execute:
   eval: false
 footer: "{{< fa brands github >}} {{< fa brands bluesky >}} {{< fa brands mastodon >}} {{< fa brands linkedin >}} [@statsRhian](https://bsky.app/profile/statsrhian.bsky.social) &nbsp; {{< fa laptop-code >}} [statsrhian.github.io/build-r-pkg](https://statsrhian.github.io/build-r-pkg)"
 
-
 ---
+
+## Set-up 👩‍💻
+
+- Welcome! We'll start the workshop shortly
+
+- If you want to code along with me, please follow the set-up instructions ⬇️
+
+### [statsrhian.github.io/build-r-pkg/set-up](https://statsrhian.github.io/build-r-pkg/set-up)
+
+- If you'd prefer to just want to sit back and watch - that's fine too 😊
 
 # Welcome
 
@@ -24,23 +33,20 @@ footer: "{{< fa brands github >}} {{< fa brands bluesky >}} {{< fa brands mastod
 ## Why build one?
 
 - Reproducible
-- Reuseable
-- Share your code
+- Reusability across projects
+- Testing is easier
+- Dependency management
+- Easy to use documentation
 - It's fun and empowering
-
-## Real-world examples (including from NHS / academia).
-
-- {changepoint}
+- Sharing is caring
 
 ## Myths
 
-You don't have to
-
-- have lots of original functions
-- start from scratch
-- make it perfect 
-- put it on CRAN
-
+- Doesn’t have to be on CRAN
+- Doesn’t have to have hundreds of functions
+- Doesn’t have to be useful for anyone else
+- Doesn’t have to do anything fancy
+- Doesn’t have to be scary
 
 :::{.notes}
 - Small packages are fine!
@@ -82,7 +88,7 @@ biketools/
 ::: 
 
 :::{.notes}
-It’s not just any box of random tools — it’s a kit that someone else should be able to pick up and use immediately without calling you for instructions.
+It’s not just any box of random tools, it’s a kit that someone else should be able to pick up and use immediately without calling you for instructions.
 :::
 
 
@@ -119,7 +125,7 @@ biketools/
 
 It lists the brand name (package name), who built it (author), what it’s for (description), model/version number, and what other kits it needs to work with (dependencies).
 
-Without this, no one knows what kind of work the toolbox is meant for — is it for bikes, plumbing, or electronics?
+Without this, no one knows what kind of work the toolbox is meant for, is it for bikes, plumbing, or electronics?
 :::
 
 ## `R/` folder
@@ -152,11 +158,9 @@ biketools/
 ::: 
 
 :::{.notes}
-The tools themselves — the real functional parts.
-
 This is where the actual tools (functions) live.
 
-Each tool has a job — hammer, screwdriver, drill — each function solves a specific problem.
+Each tool has a job, each function solves a specific problem.
 
 The better organised and labelled they are, the faster someone can find what they need.
 :::
@@ -192,13 +196,7 @@ biketools/
 ::: 
 
 :::{.notes}
-The literal instruction manuals
-
-For every tool, there’s a laminated instruction card stored in the lid pocket.
-
 These tell you what the tool does, how to hold it, and give examples of using it safely.
-
-Without these, someone might use a chisel as a screwdriver and wonder why things break.
 :::
 
 
@@ -240,14 +238,6 @@ biketools/
 
 - Sometimes your toolbox doesn’t have everything — you borrow tools from your friends’ toolboxes (imports).
 
-“If someone uses my wrench tool, and it needs a special head from the Allen Keys kit, get it from there.”
-
-All the right borrowed tools are fetched automatically when someone uses your toolbox.
-
-Without it, your user might open your toolbox and find half the tools missing.
-
-Inside the lid is a diagram showing which tools are available to the public and where they came from.
-
 :::
 
 ## Extra bits
@@ -262,6 +252,7 @@ Inside the lid is a diagram showing which tools are available to the public and 
 
 :::
 ::: {.column}
+![](img/toolbox-closed.jpg){fig-alt="TODO: Add alt text."}
 :::
 ::: 
 
@@ -275,20 +266,64 @@ Inside the lid is a diagram showing which tools are available to the public and 
 
 :::
 
+# Let's build 🛠️
+
+## 👀 Create an R package
+
+## 👩‍💻 Create an R package
+
+- `usethis::create_package()`
+- Open the `DESCRIPTION` file and customise it
+
+## 👀 Add a function
+
+## 👩‍💻 Add a function
+
+- Create a new file in the `R/` folder
+
+- Write any function
+
+- Run `devtools::install()`
+
+- Try out your function
+
+```
+hello <- function() {
+print("My first function!")
+}
+```
+
+## 👀 Document your function
+
+
+## 👩‍💻 Document your function
+
+1. Add roxygen strings
+
+1. Run `devtools::document()`
+
+1. Run `devtools::install()`
+
+1. View the help file `?test`
+
+## Developer process
+
+1.  edit
+1. `devtools::document()`
+1. `devtools::build()`
+1. `devtools::check()`
+
 ## Package check
 
 Inspect your toolbox before lending it out!
 
-
-- Is there anything in there that shouldn't be in there? :check:
+- Is there anything in there that shouldn't be in there?
 - Is it too heavy?
 - Does it have all the right instructions?
 
 :::{.notes}
 
-An inspection before lending the box — ensures all tools are there and safe.
-
-Before selling or lending the toolbox, the inspector goes through each tool, checks the labels, makes sure nothing’s missing or rusty, and confirms all the parts match the manufacturer’s description.
+An inspection before lending the box, ensures all tools are there and safe.
 
 If something fails inspection, you get a report telling you exactly what to fix.
 
@@ -299,111 +334,45 @@ If something fails inspection, you get a report telling you exactly what to fix.
 
 :::
 
-## Explore {dplyr}
+## 👀 Package check
 
-Key point: You don’t have to write most of these files by hand
+## 👩‍💻 Package check
 
-# Let's build 🛠️
+- Run `devtools::check()`
 
-## Demo 👀: Create an R package
+- Don't worry if it doesn't all pass!
 
-```
-usethis::create_package()
-```
+## 👩‍💻 Choose your own adventure
 
-## Your turn 👩‍💻: Create an R package
+- Add a second function
 
-```
-usethis::create_package()
-```
+- Create a vignette:
 
-## Demo 👀: Add a function
+`usethis::use_vignette("intro")`
 
-## Your turn 👩‍💻: Add a function
-
-## Demo 👀: Document your function
-
-## Roxygen
-
-- Run `roxygen2::document()`
-
-## Your turn 👩‍💻: Document your function
-
-1. Add roxygen strings
-
-1. Run `devtools::document()`
-
-1. Run `devtools::install()`
-
-1. View the help file `?test`
-
-
-
-Introduce the process of developing it (run devtools often!)
-
-1. Add a second function. INTERNAL
-
-1. Create a vignette:
-
-```
-usethis::use_vignette("intro")
-```
-
-1. Add a test:
+- Add a test:
 
 ```
 usethis::use_testthat()
 usethis::use_test("hello")
 ```
 
-1.
-Customise `DESCRIPTION` metadata.
 
-## Developer process
+## Share your package
 
-- edit
-- document()
-- build()
-- check()
+- CRAN: `install.packages("biketools.zip")`
+- GitHub: `devtools::install_github("statsrhian/biketools.zip")`
+- Local install: `devtools::install_local("biketools.zip")`
 
-## Package check
 
-- Don't worry if it doesn't all pass
+<!---
 
-## Sharing it
-
-- What is CRAN
-- GitHub
-- Local install
-
-```
-usethis::use_git()
-usethis::use_github()
-```
-
-# Wrap up
-
-## Recap of components
-
-Show the “package lifecycle” diagram:
-
-Create
-
-Add functions/docs
-
-Test
-
-Share
-
-## Just one more thing...
-
+## Reflect...
 - One thing I learned…
-
 - One thing I want to try later…
-
 - One thing I still have a question about…
 
-## Resources
+--->
 
 
 
