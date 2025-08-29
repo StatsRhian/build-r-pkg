@@ -6,10 +6,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.33">
+  <meta name="generator" content="quarto-1.7.34">
 
   <meta name="author" content="Dr Rhian Davies">
   <meta name="dcterms.date" content="2025-09-03">
@@ -144,6 +144,31 @@
 
   <p class="date">2025-09-03</p>
 </section>
+<section class="slide level2">
+
+<!--- TO FIX
+
+open with a personal story: “When I first started, I kept copy-pasting functions across projects. Then I realised… a package is just a tidy toolbox!” → hooks people in emotionally.
+
+Active learning: Add short “think-pair-share” moments (“What’s one function you’d put in your personal package?”). Keeps energy up.
+
+Next steps slide: End with clear “where to go from here” (Hadley’s R Packages book, r-pkgs.org, pkgdown, joining rOpenSci, etc.). Helps motivated learners continue.
+
+- should I mention devtools::load_all()
+- tidy notes
+- add alt text
+- teach IMPORTS?
+- remove vignette?
+
+Engagement / reflection
+
+I love your hidden reflective slide at the end. I’d actually bring it back in! Even a quick “turn to your neighbour and share one thing you learned” helps solidify learning.
+
+Maybe include a slide with common pitfalls/troubleshooting (“I forgot to run document(), why doesn’t help work?”).
+
+
+--->
+</section>
 <section id="set-up" class="slide level2">
 <h2>Set-up 👩‍💻</h2>
 <ul>
@@ -215,20 +240,6 @@
 <div class="columns">
 <div class="column">
 <pre>biketools/
-├─ DESCRIPTION
-├─ NAMESPACE
-├─ R/
-│  ├─ chain-braker.R
-│  ├─ multitool.R
-│  ├─ pedal-wrench.R
-│  ├─ tyre-levers.R
-├─ man/
-│  ├─ chain-braker.Rd
-│  ├─ multitool.Rd
-│  ├─ pedal-wrench.Rd
-│  ├─ tyre-levers.Rd
-├─ tests/
-├─ vignettes/
 </pre>
 </div><div class="column">
 <p><img data-src="img/toolbox-closed.jpg" alt="TODO: Add alt text."></p>
@@ -253,19 +264,6 @@
 <div class="column">
 <pre>biketools/
 ├─ <span class="highlight">DESCRIPTION</span>
-├─ NAMESPACE
-├─ R/
-│  ├─ chain-braker.R
-│  ├─ multitool.R
-│  ├─ pedal-wrench.R
-│  ├─ tyre-levers.R
-├─ man/
-│  ├─ chain-braker.Rd
-│  ├─ multitool.Rd
-│  ├─ pedal-wrench.Rd
-│  ├─ tyre-levers.Rd
-├─ tests/
-├─ vignettes/
 </pre>
 </div><div class="column">
 <p><img data-src="img/toolbox-label.jpg" alt="TODO: Add alt text."></p>
@@ -291,22 +289,14 @@
 <div class="column">
 <pre>biketools/
 ├─ DESCRIPTION
-├─ NAMESPACE
 ├─ <span class="highlight">R/
 │  ├─ chain-braker.R
 │  ├─ multitool.R
 │  ├─ pedal-wrench.R
 │  ├─ tyre-levers.R</span>
-├─ man/
-│  ├─ chain-braker.Rd
-│  ├─ multitool.Rd
-│  ├─ pedal-wrench.Rd
-│  ├─ tyre-levers.Rd
-├─ tests/
-├─ vignettes/
 </pre>
 </div><div class="column">
-<p><img data-src="img/toolbox-tools.jpg" alt="TODO: Add alt text."></p>
+<p><img data-src="img/toolbox-tools.png" alt="TODO: Add alt text."></p>
 </div></div>
 <aside class="notes">
 <p>This is where the actual tools (functions) live.</p>
@@ -330,7 +320,6 @@
 <div class="column">
 <pre>biketools/
 ├─ DESCRIPTION
-├─ NAMESPACE
 ├─ R/
 │  ├─ chain-braker.R
 │  ├─ multitool.R
@@ -341,8 +330,6 @@
 │  ├─ multitool.Rd
 │  ├─ pedal-wrench.Rd
 │  ├─ tyre-levers.Rd</span>
-├─ tests/
-├─ vignettes/
 </pre>
 </div><div class="column">
 <p><img data-src="img/toolbox-manual.jpg" alt="TODO: Add alt text."></p>
@@ -367,7 +354,6 @@
 <div class="column">
 <pre>biketools/
 ├─ DESCRIPTION
-├─ <span class="highlight">NAMESPACE</span>
 ├─ R/
 │  ├─ chain-braker.R
 │  ├─ multitool.R
@@ -378,8 +364,7 @@
 │  ├─ multitool.Rd
 │  ├─ pedal-wrench.Rd
 │  ├─ tyre-levers.Rd
-├─ tests/
-├─ vignettes/
+├─ <span class="highlight">NAMESPACE</span>
 </pre>
 </div><div class="column">
 <p><img data-src="img/toolbox-shelf.jpg" alt="TODO: Add alt text."></p>
@@ -406,15 +391,29 @@
 <h2>Extra bits</h2>
 <div class="columns">
 <div class="column">
-<ul>
-<li>tests</li>
-<li>vignettes</li>
-<li>example data</li>
-<li>{pkgdown} website</li>
-<li>hex sticker</li>
-</ul>
+<pre>biketools/
+├─ DESCRIPTION
+├─ R/
+│  ├─ chain-braker.R
+│  ├─ multitool.R
+│  ├─ pedal-wrench.R
+│  ├─ tyre-levers.R
+├─ man/
+│  ├─ chain-braker.Rd
+│  ├─ multitool.Rd
+│  ├─ pedal-wrench.Rd
+│  ├─ tyre-levers.Rd
+├─ NAMESPACE
+├─ <span class="highlight">data/
+├─ pkgdown/
+├─ tests/
+├─ vignettes/
+├─ READMD.md
+├─ NEWS.md
+├─ hex-sticker.png</span>
+</pre>
 </div><div class="column">
-<p><img data-src="img/toolbox-closed.jpg" alt="TODO: Add alt text."></p>
+<p><img data-src="img/toolbox-extras.jpg" alt="TODO: Add alt text."></p>
 </div></div>
 <aside class="notes">
 <ul>
@@ -447,12 +446,28 @@
 <section id="create-an-r-package-1" class="slide level2">
 <h2>👩‍💻 Create an R package</h2>
 <ul>
-<li><code>usethis::create_package()</code></li>
+<li>Run <code>usethis::create_package("sums")</code></li>
 <li>Open the <code>DESCRIPTION</code> file and customise it</li>
+<li>Run <code>usethis::use_mit_license()</code></li>
+<li>Run <code>devtools::install()</code></li>
 </ul>
 </section>
 <section id="add-a-function" class="slide level2">
 <h2>👀 Add a function</h2>
+<aside class="notes">
+<p>Need to introduce adding functions without getting hung up on <code>#' @export</code> and <code>NAMESPACE</code></p>
+<p>Could manually edit it FIRST <code>export(hello)</code> and then show later how it’s generated</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="add-a-function-1" class="slide level2">
 <h2>👩‍💻 Add a function</h2>
@@ -468,11 +483,35 @@ print("My first function!")
 </section>
 <section id="document-your-function" class="slide level2">
 <h2>👀 Document your function</h2>
+<aside class="notes">
+<pre><code>#' Add together two numbers
+#' 
+#' @param x A number.
+#' @param y A number.
+#' @returns A numeric vector.
+#' @examples
+#' add(1, 1)
+#' add(10, 1)
+#' @export
+add &lt;- function(x, y) {
+  x + y
+}</code></pre>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="document-your-function-1" class="slide level2">
 <h2>👩‍💻 Document your function</h2>
 <ol type="1">
-<li><p>Add roxygen strings</p></li>
+<li><p>Add some {roxygen2} strings</p></li>
 <li><p>Run <code>devtools::document()</code></p></li>
 <li><p>Run <code>devtools::install()</code></p></li>
 <li><p>View the help file <code>?test</code></p></li>
@@ -483,7 +522,7 @@ print("My first function!")
 <ol type="1">
 <li>edit</li>
 <li><code>devtools::document()</code></li>
-<li><code>devtools::build()</code></li>
+<li><code>devtools::install()</code></li>
 <li><code>devtools::check()</code></li>
 </ol>
 </section>
@@ -528,23 +567,26 @@ print("My first function!")
 </section>
 <section id="choose-your-own-adventure" class="slide level2">
 <h2>👩‍💻 Choose your own adventure</h2>
+<div class="columns">
+<div class="column">
 <ul>
-<li><p>Add a second function</p></li>
-<li><p>Create a vignette:</p></li>
-</ul>
-<p><code>usethis::use_vignette("intro")</code></p>
-<ul>
-<li>Add a test:</li>
+<li><p>Create a second function</p></li>
+<li><p>Create a vignette <code>usethis::use_vignette("times-tables")</code></p></li>
+<li><p>Add a test</p></li>
+<li><p>Create a <a href="https://connect.thinkr.fr/hexmake/">hex sticker</a></p></li>
 </ul>
 <pre><code>usethis::use_testthat()
 usethis::use_test("hello")</code></pre>
+</div><div class="column">
+<p><img data-src="img/hex-RSSConf2025.png" alt="TODO: Add alt text."></p>
+</div></div>
 </section>
 <section id="share-your-package" class="slide level2">
 <h2>Share your package</h2>
 <ul>
 <li>CRAN: <code>install.packages("biketools.zip")</code></li>
-<li>GitHub: <code>devtools::install_github("statsrhian/biketools.zip")</code></li>
-<li>Local install: <code>devtools::install_local("biketools.zip")</code></li>
+<li>GitHub: <code>devtools::install_github("statsrhian/biketools")</code></li>
+<li>Local install: <code>devtools::install_local("biketools")</code></li>
 </ul>
 <!---
 

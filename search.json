@@ -32,42 +32,42 @@
     "href": "slides/index.html#whats-in-your-toolbox",
     "title": "Build your own toolbox 🧰",
     "section": "What’s in your toolbox?",
-    "text": "What’s in your toolbox?\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\nIt’s not just any box of random tools, it’s a kit that someone else should be able to pick up and use immediately without calling you for instructions."
+    "text": "What’s in your toolbox?\n\n\nbiketools/\n\n\n\n\n\nIt’s not just any box of random tools, it’s a kit that someone else should be able to pick up and use immediately without calling you for instructions."
   },
   {
     "objectID": "slides/index.html#description",
     "href": "slides/index.html#description",
     "title": "Build your own toolbox 🧰",
     "section": "DESCRIPTION",
-    "text": "DESCRIPTION\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\nIt lists the brand name (package name), who built it (author), what it’s for (description), model/version number, and what other kits it needs to work with (dependencies).\nWithout this, no one knows what kind of work the toolbox is meant for, is it for bikes, plumbing, or electronics?"
+    "text": "DESCRIPTION\n\n\nbiketools/\n├─ DESCRIPTION\n\n\n\n\n\nIt lists the brand name (package name), who built it (author), what it’s for (description), model/version number, and what other kits it needs to work with (dependencies).\nWithout this, no one knows what kind of work the toolbox is meant for, is it for bikes, plumbing, or electronics?"
   },
   {
     "objectID": "slides/index.html#r-folder",
     "href": "slides/index.html#r-folder",
     "title": "Build your own toolbox 🧰",
     "section": "R/ folder",
-    "text": "R/ folder\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\nThis is where the actual tools (functions) live.\nEach tool has a job, each function solves a specific problem.\nThe better organised and labelled they are, the faster someone can find what they need."
+    "text": "R/ folder\n\n\nbiketools/\n├─ DESCRIPTION\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n\n\n\n\n\nThis is where the actual tools (functions) live.\nEach tool has a job, each function solves a specific problem.\nThe better organised and labelled they are, the faster someone can find what they need."
   },
   {
     "objectID": "slides/index.html#man-folder",
     "href": "slides/index.html#man-folder",
     "title": "Build your own toolbox 🧰",
     "section": "man/ folder",
-    "text": "man/ folder\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\nThese tell you what the tool does, how to hold it, and give examples of using it safely."
+    "text": "man/ folder\n\n\nbiketools/\n├─ DESCRIPTION\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n\n\n\n\n\nThese tell you what the tool does, how to hold it, and give examples of using it safely."
   },
   {
     "objectID": "slides/index.html#namespace",
     "href": "slides/index.html#namespace",
     "title": "Build your own toolbox 🧰",
     "section": "NAMESPACE",
-    "text": "NAMESPACE\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\n\nSome tools are kept in plain sight for anyone to grab (exported functions).\nOthers are hidden in a secret compartment only you know about (internal functions).\nSometimes your toolbox doesn’t have everything — you borrow tools from your friends’ toolboxes (imports)."
+    "text": "NAMESPACE\n\n\nbiketools/\n├─ DESCRIPTION\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ NAMESPACE\n\n\n\n\n\n\nSome tools are kept in plain sight for anyone to grab (exported functions).\nOthers are hidden in a secret compartment only you know about (internal functions).\nSometimes your toolbox doesn’t have everything — you borrow tools from your friends’ toolboxes (imports)."
   },
   {
     "objectID": "slides/index.html#extra-bits",
     "href": "slides/index.html#extra-bits",
     "title": "Build your own toolbox 🧰",
     "section": "Extra bits",
-    "text": "Extra bits\n\n\n\ntests\nvignettes\nexample data\n{pkgdown} website\nhex sticker\n\n\n\n\n\n\nDo my tools work correctly?\nHow to do a basic bike service\nSpare bit of chain for trying chain breaker\nGlossy website\nCool paint job"
+    "text": "Extra bits\n\n\nbiketools/\n├─ DESCRIPTION\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ NAMESPACE\n├─ data/\n├─ pkgdown/\n├─ tests/\n├─ vignettes/\n├─ READMD.md\n├─ NEWS.md\n├─ hex-sticker.png\n\n\n\n\n\n\nDo my tools work correctly?\nHow to do a basic bike service\nSpare bit of chain for trying chain breaker\nGlossy website\nCool paint job"
   },
   {
     "objectID": "slides/index.html#create-an-r-package",
@@ -81,14 +81,14 @@
     "href": "slides/index.html#create-an-r-package-1",
     "title": "Build your own toolbox 🧰",
     "section": "👩‍💻 Create an R package",
-    "text": "👩‍💻 Create an R package\n\nusethis::create_package()\nOpen the DESCRIPTION file and customise it"
+    "text": "👩‍💻 Create an R package\n\nRun usethis::create_package(\"sums\")\nOpen the DESCRIPTION file and customise it\nRun usethis::use_mit_license()\nRun devtools::install()"
   },
   {
     "objectID": "slides/index.html#add-a-function",
     "href": "slides/index.html#add-a-function",
     "title": "Build your own toolbox 🧰",
     "section": "👀 Add a function",
-    "text": "👀 Add a function"
+    "text": "👀 Add a function\n\nNeed to introduce adding functions without getting hung up on #' @export and NAMESPACE\nCould manually edit it FIRST export(hello) and then show later how it’s generated"
   },
   {
     "objectID": "slides/index.html#add-a-function-1",
@@ -102,21 +102,21 @@
     "href": "slides/index.html#document-your-function",
     "title": "Build your own toolbox 🧰",
     "section": "👀 Document your function",
-    "text": "👀 Document your function"
+    "text": "👀 Document your function\n\n#' Add together two numbers\n#' \n#' @param x A number.\n#' @param y A number.\n#' @returns A numeric vector.\n#' @examples\n#' add(1, 1)\n#' add(10, 1)\n#' @export\nadd &lt;- function(x, y) {\n  x + y\n}"
   },
   {
     "objectID": "slides/index.html#document-your-function-1",
     "href": "slides/index.html#document-your-function-1",
     "title": "Build your own toolbox 🧰",
     "section": "👩‍💻 Document your function",
-    "text": "👩‍💻 Document your function\n\nAdd roxygen strings\nRun devtools::document()\nRun devtools::install()\nView the help file ?test"
+    "text": "👩‍💻 Document your function\n\nAdd some {roxygen2} strings\nRun devtools::document()\nRun devtools::install()\nView the help file ?test"
   },
   {
     "objectID": "slides/index.html#developer-process",
     "href": "slides/index.html#developer-process",
     "title": "Build your own toolbox 🧰",
     "section": "Developer process",
-    "text": "Developer process\n\nedit\ndevtools::document()\ndevtools::build()\ndevtools::check()"
+    "text": "Developer process\n\nedit\ndevtools::document()\ndevtools::install()\ndevtools::check()"
   },
   {
     "objectID": "slides/index.html#package-check",
@@ -144,14 +144,14 @@
     "href": "slides/index.html#choose-your-own-adventure",
     "title": "Build your own toolbox 🧰",
     "section": "👩‍💻 Choose your own adventure",
-    "text": "👩‍💻 Choose your own adventure\n\nAdd a second function\nCreate a vignette:\n\nusethis::use_vignette(\"intro\")\n\nAdd a test:\n\nusethis::use_testthat()\nusethis::use_test(\"hello\")"
+    "text": "👩‍💻 Choose your own adventure\n\n\n\nCreate a second function\nCreate a vignette usethis::use_vignette(\"times-tables\")\nAdd a test\nCreate a hex sticker\n\nusethis::use_testthat()\nusethis::use_test(\"hello\")"
   },
   {
     "objectID": "slides/index.html#share-your-package",
     "href": "slides/index.html#share-your-package",
     "title": "Build your own toolbox 🧰",
     "section": "Share your package",
-    "text": "Share your package\n\nCRAN: install.packages(\"biketools.zip\")\nGitHub: devtools::install_github(\"statsrhian/biketools.zip\")\nLocal install: devtools::install_local(\"biketools.zip\")"
+    "text": "Share your package\n\nCRAN: install.packages(\"biketools.zip\")\nGitHub: devtools::install_github(\"statsrhian/biketools\")\nLocal install: devtools::install_local(\"biketools\")"
   },
   {
     "objectID": "slides.html",
