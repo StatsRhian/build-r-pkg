@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "slides/index.html#set-up",
+    "href": "slides/index.html#set-up",
+    "title": "Build your own toolbox 🧰",
+    "section": "Set-up 👩‍💻",
+    "text": "Set-up 👩‍💻\n\nWelcome! We’ll start the workshop shortly\nIf you want to code along with me, please follow the set-up instructions ⬇️\n\nstatsrhian.github.io/build-r-pkg/set-up\n\nIf you’d prefer to just want to sit back and watch - that’s fine too 😊"
+  },
+  {
     "objectID": "slides/index.html#what-is-an-r-package",
     "href": "slides/index.html#what-is-an-r-package",
     "title": "Build your own toolbox 🧰",
@@ -11,56 +18,49 @@
     "href": "slides/index.html#why-build-one",
     "title": "Build your own toolbox 🧰",
     "section": "Why build one?",
-    "text": "Why build one?\n\nReproducible\nReuseable\nShare your code\nIt’s fun and empowering"
-  },
-  {
-    "objectID": "slides/index.html#real-world-examples-including-from-nhs-academia.",
-    "href": "slides/index.html#real-world-examples-including-from-nhs-academia.",
-    "title": "Build your own toolbox 🧰",
-    "section": "Real-world examples (including from NHS / academia).",
-    "text": "Real-world examples (including from NHS / academia).\n\n{changepoint}"
+    "text": "Why build one?\n\nReproducible\nReusability across projects\nTesting is easier\nDependency management\nEasy to use documentation\nIt’s fun and empowering\nSharing is caring"
   },
   {
     "objectID": "slides/index.html#myths",
     "href": "slides/index.html#myths",
     "title": "Build your own toolbox 🧰",
     "section": "Myths",
-    "text": "Myths\nYou don’t have to\n\nhave lots of original functions\nstart from scratch\nmake it perfect\nput it on CRAN\n\n\n\nSmall packages are fine!\nBuild on the work of others\nPackage warnings are okay!"
+    "text": "Myths\n\nDoesn’t have to be on CRAN\nDoesn’t have to have hundreds of functions\nDoesn’t have to be useful for anyone else\nDoesn’t have to do anything fancy\nDoesn’t have to be scary\n\n\n\nSmall packages are fine!\nBuild on the work of others\nPackage warnings are okay!"
   },
   {
     "objectID": "slides/index.html#whats-in-your-toolbox",
     "href": "slides/index.html#whats-in-your-toolbox",
     "title": "Build your own toolbox 🧰",
     "section": "What’s in your toolbox?",
-    "text": "What’s in your toolbox?\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\nIt’s not just any box of random tools — it’s a kit that someone else should be able to pick up and use immediately without calling you for instructions."
+    "text": "What’s in your toolbox?\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\nIt’s not just any box of random tools, it’s a kit that someone else should be able to pick up and use immediately without calling you for instructions."
   },
   {
     "objectID": "slides/index.html#description",
     "href": "slides/index.html#description",
     "title": "Build your own toolbox 🧰",
     "section": "DESCRIPTION",
-    "text": "DESCRIPTION\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\nIt lists the brand name (package name), who built it (author), what it’s for (description), model/version number, and what other kits it needs to work with (dependencies).\nWithout this, no one knows what kind of work the toolbox is meant for — is it for bikes, plumbing, or electronics?"
+    "text": "DESCRIPTION\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\nIt lists the brand name (package name), who built it (author), what it’s for (description), model/version number, and what other kits it needs to work with (dependencies).\nWithout this, no one knows what kind of work the toolbox is meant for, is it for bikes, plumbing, or electronics?"
   },
   {
     "objectID": "slides/index.html#r-folder",
     "href": "slides/index.html#r-folder",
     "title": "Build your own toolbox 🧰",
     "section": "R/ folder",
-    "text": "R/ folder\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\nThe tools themselves — the real functional parts.\nThis is where the actual tools (functions) live.\nEach tool has a job — hammer, screwdriver, drill — each function solves a specific problem.\nThe better organised and labelled they are, the faster someone can find what they need."
+    "text": "R/ folder\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\nThis is where the actual tools (functions) live.\nEach tool has a job, each function solves a specific problem.\nThe better organised and labelled they are, the faster someone can find what they need."
   },
   {
     "objectID": "slides/index.html#man-folder",
     "href": "slides/index.html#man-folder",
     "title": "Build your own toolbox 🧰",
     "section": "man/ folder",
-    "text": "man/ folder\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\nThe literal instruction manuals\nFor every tool, there’s a laminated instruction card stored in the lid pocket.\nThese tell you what the tool does, how to hold it, and give examples of using it safely.\nWithout these, someone might use a chisel as a screwdriver and wonder why things break."
+    "text": "man/ folder\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\nThese tell you what the tool does, how to hold it, and give examples of using it safely."
   },
   {
     "objectID": "slides/index.html#namespace",
     "href": "slides/index.html#namespace",
     "title": "Build your own toolbox 🧰",
     "section": "NAMESPACE",
-    "text": "NAMESPACE\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\n\nSome tools are kept in plain sight for anyone to grab (exported functions).\nOthers are hidden in a secret compartment only you know about (internal functions).\nSometimes your toolbox doesn’t have everything — you borrow tools from your friends’ toolboxes (imports).\n\n“If someone uses my wrench tool, and it needs a special head from the Allen Keys kit, get it from there.”\nAll the right borrowed tools are fetched automatically when someone uses your toolbox.\nWithout it, your user might open your toolbox and find half the tools missing.\nInside the lid is a diagram showing which tools are available to the public and where they came from."
+    "text": "NAMESPACE\n\n\nbiketools/\n├─ DESCRIPTION\n├─ NAMESPACE\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ tests/\n├─ vignettes/\n\n\n\n\n\n\nSome tools are kept in plain sight for anyone to grab (exported functions).\nOthers are hidden in a secret compartment only you know about (internal functions).\nSometimes your toolbox doesn’t have everything — you borrow tools from your friends’ toolboxes (imports)."
   },
   {
     "objectID": "slides/index.html#extra-bits",
@@ -70,109 +70,88 @@
     "text": "Extra bits\n\n\n\ntests\nvignettes\nexample data\n{pkgdown} website\nhex sticker\n\n\n\n\n\n\nDo my tools work correctly?\nHow to do a basic bike service\nSpare bit of chain for trying chain breaker\nGlossy website\nCool paint job"
   },
   {
-    "objectID": "slides/index.html#package-check",
-    "href": "slides/index.html#package-check",
+    "objectID": "slides/index.html#create-an-r-package",
+    "href": "slides/index.html#create-an-r-package",
     "title": "Build your own toolbox 🧰",
-    "section": "Package check",
-    "text": "Package check\nInspect your toolbox before lending it out!\n\nIs there anything in there that shouldn’t be in there? :check:\nIs it too heavy?\nDoes it have all the right instructions?\n\n\nAn inspection before lending the box — ensures all tools are there and safe.\nBefore selling or lending the toolbox, the inspector goes through each tool, checks the labels, makes sure nothing’s missing or rusty, and confirms all the parts match the manufacturer’s description.\nIf something fails inspection, you get a report telling you exactly what to fix.\n\nCan someone carry the toolbox?\nIs there anything in there that shouldn’t be in there?\nIs it too full?\nDoes it have all the right instructions?"
+    "section": "👀 Create an R package",
+    "text": "👀 Create an R package"
   },
   {
-    "objectID": "slides/index.html#explore-dplyr",
-    "href": "slides/index.html#explore-dplyr",
+    "objectID": "slides/index.html#create-an-r-package-1",
+    "href": "slides/index.html#create-an-r-package-1",
     "title": "Build your own toolbox 🧰",
-    "section": "Explore {dplyr}",
-    "text": "Explore {dplyr}\nKey point: You don’t have to write most of these files by hand"
+    "section": "👩‍💻 Create an R package",
+    "text": "👩‍💻 Create an R package\n\nusethis::create_package()\nOpen the DESCRIPTION file and customise it"
   },
   {
-    "objectID": "slides/index.html#demo-create-an-r-package",
-    "href": "slides/index.html#demo-create-an-r-package",
+    "objectID": "slides/index.html#add-a-function",
+    "href": "slides/index.html#add-a-function",
     "title": "Build your own toolbox 🧰",
-    "section": "Demo 👀: Create an R package",
-    "text": "Demo 👀: Create an R package\nusethis::create_package()"
+    "section": "👀 Add a function",
+    "text": "👀 Add a function"
   },
   {
-    "objectID": "slides/index.html#your-turn-create-an-r-package",
-    "href": "slides/index.html#your-turn-create-an-r-package",
+    "objectID": "slides/index.html#add-a-function-1",
+    "href": "slides/index.html#add-a-function-1",
     "title": "Build your own toolbox 🧰",
-    "section": "Your turn 👩‍💻: Create an R package",
-    "text": "Your turn 👩‍💻: Create an R package\nusethis::create_package()"
+    "section": "👩‍💻 Add a function",
+    "text": "👩‍💻 Add a function\n\nCreate a new file in the R/ folder\nWrite any function\nRun devtools::install()\nTry out your function\n\nhello &lt;- function() {\nprint(\"My first function!\")\n}"
   },
   {
-    "objectID": "slides/index.html#demo-add-a-function",
-    "href": "slides/index.html#demo-add-a-function",
+    "objectID": "slides/index.html#document-your-function",
+    "href": "slides/index.html#document-your-function",
     "title": "Build your own toolbox 🧰",
-    "section": "Demo 👀: Add a function",
-    "text": "Demo 👀: Add a function"
+    "section": "👀 Document your function",
+    "text": "👀 Document your function"
   },
   {
-    "objectID": "slides/index.html#your-turn-add-a-function",
-    "href": "slides/index.html#your-turn-add-a-function",
+    "objectID": "slides/index.html#document-your-function-1",
+    "href": "slides/index.html#document-your-function-1",
     "title": "Build your own toolbox 🧰",
-    "section": "Your turn 👩‍💻: Add a function",
-    "text": "Your turn 👩‍💻: Add a function"
-  },
-  {
-    "objectID": "slides/index.html#demo-document-your-function",
-    "href": "slides/index.html#demo-document-your-function",
-    "title": "Build your own toolbox 🧰",
-    "section": "Demo 👀: Document your function",
-    "text": "Demo 👀: Document your function"
-  },
-  {
-    "objectID": "slides/index.html#roxygen",
-    "href": "slides/index.html#roxygen",
-    "title": "Build your own toolbox 🧰",
-    "section": "Roxygen",
-    "text": "Roxygen\n\nRun roxygen2::document()"
-  },
-  {
-    "objectID": "slides/index.html#your-turn-document-your-function",
-    "href": "slides/index.html#your-turn-document-your-function",
-    "title": "Build your own toolbox 🧰",
-    "section": "Your turn 👩‍💻: Document your function",
-    "text": "Your turn 👩‍💻: Document your function\n\nAdd roxygen strings\nRun devtools::document()\nRun devtools::install()\nView the help file ?test\n\nIntroduce the process of developing it (run devtools often!)\n\nAdd a second function. INTERNAL\nCreate a vignette:\n\nusethis::use_vignette(\"intro\")\n\nAdd a test:\n\nusethis::use_testthat()\nusethis::use_test(\"hello\")\n\nCustomise DESCRIPTION metadata."
+    "section": "👩‍💻 Document your function",
+    "text": "👩‍💻 Document your function\n\nAdd roxygen strings\nRun devtools::document()\nRun devtools::install()\nView the help file ?test"
   },
   {
     "objectID": "slides/index.html#developer-process",
     "href": "slides/index.html#developer-process",
     "title": "Build your own toolbox 🧰",
     "section": "Developer process",
-    "text": "Developer process\n\nedit\ndocument()\nbuild()\ncheck()"
+    "text": "Developer process\n\nedit\ndevtools::document()\ndevtools::build()\ndevtools::check()"
+  },
+  {
+    "objectID": "slides/index.html#package-check",
+    "href": "slides/index.html#package-check",
+    "title": "Build your own toolbox 🧰",
+    "section": "Package check",
+    "text": "Package check\nInspect your toolbox before lending it out!\n\nIs there anything in there that shouldn’t be in there?\nIs it too heavy?\nDoes it have all the right instructions?\n\n\nAn inspection before lending the box, ensures all tools are there and safe.\nIf something fails inspection, you get a report telling you exactly what to fix.\n\nCan someone carry the toolbox?\nIs there anything in there that shouldn’t be in there?\nIs it too full?\nDoes it have all the right instructions?"
   },
   {
     "objectID": "slides/index.html#package-check-1",
     "href": "slides/index.html#package-check-1",
     "title": "Build your own toolbox 🧰",
-    "section": "Package check",
-    "text": "Package check\n\nDon’t worry if it doesn’t all pass"
+    "section": "👀 Package check",
+    "text": "👀 Package check"
   },
   {
-    "objectID": "slides/index.html#sharing-it",
-    "href": "slides/index.html#sharing-it",
+    "objectID": "slides/index.html#package-check-2",
+    "href": "slides/index.html#package-check-2",
     "title": "Build your own toolbox 🧰",
-    "section": "Sharing it",
-    "text": "Sharing it\n\nWhat is CRAN\nGitHub\nLocal install\n\nusethis::use_git()\nusethis::use_github()"
+    "section": "👩‍💻 Package check",
+    "text": "👩‍💻 Package check\n\nRun devtools::check()\nDon’t worry if it doesn’t all pass!"
   },
   {
-    "objectID": "slides/index.html#recap-of-components",
-    "href": "slides/index.html#recap-of-components",
+    "objectID": "slides/index.html#choose-your-own-adventure",
+    "href": "slides/index.html#choose-your-own-adventure",
     "title": "Build your own toolbox 🧰",
-    "section": "Recap of components",
-    "text": "Recap of components\nShow the “package lifecycle” diagram:\nCreate\nAdd functions/docs\nTest\nShare"
+    "section": "👩‍💻 Choose your own adventure",
+    "text": "👩‍💻 Choose your own adventure\n\nAdd a second function\nCreate a vignette:\n\nusethis::use_vignette(\"intro\")\n\nAdd a test:\n\nusethis::use_testthat()\nusethis::use_test(\"hello\")"
   },
   {
-    "objectID": "slides/index.html#just-one-more-thing",
-    "href": "slides/index.html#just-one-more-thing",
+    "objectID": "slides/index.html#share-your-package",
+    "href": "slides/index.html#share-your-package",
     "title": "Build your own toolbox 🧰",
-    "section": "Just one more thing…",
-    "text": "Just one more thing…\n\nOne thing I learned…\nOne thing I want to try later…\nOne thing I still have a question about…"
-  },
-  {
-    "objectID": "slides/index.html#resources",
-    "href": "slides/index.html#resources",
-    "title": "Build your own toolbox 🧰",
-    "section": "Resources",
-    "text": "Resources"
+    "section": "Share your package",
+    "text": "Share your package\n\nCRAN: install.packages(\"biketools.zip\")\nGitHub: devtools::install_github(\"statsrhian/biketools.zip\")\nLocal install: devtools::install_local(\"biketools.zip\")"
   },
   {
     "objectID": "slides.html",

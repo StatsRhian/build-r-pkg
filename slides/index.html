@@ -144,6 +144,17 @@
 
   <p class="date">2025-09-03</p>
 </section>
+<section id="set-up" class="slide level2">
+<h2>Set-up 👩‍💻</h2>
+<ul>
+<li><p>Welcome! We’ll start the workshop shortly</p></li>
+<li><p>If you want to code along with me, please follow the set-up instructions ⬇️</p></li>
+</ul>
+<h3 id="statsrhian.github.iobuild-r-pkgset-up"><a href="https://statsrhian.github.io/build-r-pkg/set-up">statsrhian.github.io/build-r-pkg/set-up</a></h3>
+<ul>
+<li>If you’d prefer to just want to sit back and watch - that’s fine too 😊</li>
+</ul>
+</section>
 <section>
 <section id="welcome" class="title-slide slide level1 center">
 <h1>Welcome</h1>
@@ -159,25 +170,22 @@
 <h2>Why build one?</h2>
 <ul>
 <li>Reproducible</li>
-<li>Reuseable</li>
-<li>Share your code</li>
+<li>Reusability across projects</li>
+<li>Testing is easier</li>
+<li>Dependency management</li>
+<li>Easy to use documentation</li>
 <li>It’s fun and empowering</li>
-</ul>
-</section>
-<section id="real-world-examples-including-from-nhs-academia." class="slide level2">
-<h2>Real-world examples (including from NHS / academia).</h2>
-<ul>
-<li>{changepoint}</li>
+<li>Sharing is caring</li>
 </ul>
 </section>
 <section id="myths" class="slide level2">
 <h2>Myths</h2>
-<p>You don’t have to</p>
 <ul>
-<li>have lots of original functions</li>
-<li>start from scratch</li>
-<li>make it perfect</li>
-<li>put it on CRAN</li>
+<li>Doesn’t have to be on CRAN</li>
+<li>Doesn’t have to have hundreds of functions</li>
+<li>Doesn’t have to be useful for anyone else</li>
+<li>Doesn’t have to do anything fancy</li>
+<li>Doesn’t have to be scary</li>
 </ul>
 <aside class="notes">
 <ul>
@@ -226,7 +234,7 @@
 <p><img data-src="img/toolbox-closed.jpg" alt="TODO: Add alt text."></p>
 </div></div>
 <aside class="notes">
-<p>It’s not just any box of random tools — it’s a kit that someone else should be able to pick up and use immediately without calling you for instructions.</p>
+<p>It’s not just any box of random tools, it’s a kit that someone else should be able to pick up and use immediately without calling you for instructions.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -264,7 +272,7 @@
 </div></div>
 <aside class="notes">
 <p>It lists the brand name (package name), who built it (author), what it’s for (description), model/version number, and what other kits it needs to work with (dependencies).</p>
-<p>Without this, no one knows what kind of work the toolbox is meant for — is it for bikes, plumbing, or electronics?</p>
+<p>Without this, no one knows what kind of work the toolbox is meant for, is it for bikes, plumbing, or electronics?</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -301,9 +309,8 @@
 <p><img data-src="img/toolbox-tools.jpg" alt="TODO: Add alt text."></p>
 </div></div>
 <aside class="notes">
-<p>The tools themselves — the real functional parts.</p>
 <p>This is where the actual tools (functions) live.</p>
-<p>Each tool has a job — hammer, screwdriver, drill — each function solves a specific problem.</p>
+<p>Each tool has a job, each function solves a specific problem.</p>
 <p>The better organised and labelled they are, the faster someone can find what they need.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -341,10 +348,7 @@
 <p><img data-src="img/toolbox-manual.jpg" alt="TODO: Add alt text."></p>
 </div></div>
 <aside class="notes">
-<p>The literal instruction manuals</p>
-<p>For every tool, there’s a laminated instruction card stored in the lid pocket.</p>
 <p>These tell you what the tool does, how to hold it, and give examples of using it safely.</p>
-<p>Without these, someone might use a chisel as a screwdriver and wonder why things break.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -386,10 +390,6 @@
 <li><p>Others are hidden in a secret compartment only you know about (internal functions).</p></li>
 <li><p>Sometimes your toolbox doesn’t have everything — you borrow tools from your friends’ toolboxes (imports).</p></li>
 </ul>
-<p>“If someone uses my wrench tool, and it needs a special head from the Allen Keys kit, get it from there.”</p>
-<p>All the right borrowed tools are fetched automatically when someone uses your toolbox.</p>
-<p>Without it, your user might open your toolbox and find half the tools missing.</p>
-<p>Inside the lid is a diagram showing which tools are available to the public and where they came from.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -414,7 +414,7 @@
 <li>hex sticker</li>
 </ul>
 </div><div class="column">
-
+<p><img data-src="img/toolbox-closed.jpg" alt="TODO: Add alt text."></p>
 </div></div>
 <aside class="notes">
 <ul>
@@ -435,18 +435,68 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section></section>
+<section>
+<section id="lets-build" class="title-slide slide level1 center">
+<h1>Let’s build 🛠️</h1>
+
+</section>
+<section id="create-an-r-package" class="slide level2">
+<h2>👀 Create an R package</h2>
+</section>
+<section id="create-an-r-package-1" class="slide level2">
+<h2>👩‍💻 Create an R package</h2>
+<ul>
+<li><code>usethis::create_package()</code></li>
+<li>Open the <code>DESCRIPTION</code> file and customise it</li>
+</ul>
+</section>
+<section id="add-a-function" class="slide level2">
+<h2>👀 Add a function</h2>
+</section>
+<section id="add-a-function-1" class="slide level2">
+<h2>👩‍💻 Add a function</h2>
+<ul>
+<li><p>Create a new file in the <code>R/</code> folder</p></li>
+<li><p>Write any function</p></li>
+<li><p>Run <code>devtools::install()</code></p></li>
+<li><p>Try out your function</p></li>
+</ul>
+<pre><code>hello &lt;- function() {
+print("My first function!")
+}</code></pre>
+</section>
+<section id="document-your-function" class="slide level2">
+<h2>👀 Document your function</h2>
+</section>
+<section id="document-your-function-1" class="slide level2">
+<h2>👩‍💻 Document your function</h2>
+<ol type="1">
+<li><p>Add roxygen strings</p></li>
+<li><p>Run <code>devtools::document()</code></p></li>
+<li><p>Run <code>devtools::install()</code></p></li>
+<li><p>View the help file <code>?test</code></p></li>
+</ol>
+</section>
+<section id="developer-process" class="slide level2">
+<h2>Developer process</h2>
+<ol type="1">
+<li>edit</li>
+<li><code>devtools::document()</code></li>
+<li><code>devtools::build()</code></li>
+<li><code>devtools::check()</code></li>
+</ol>
 </section>
 <section id="package-check" class="slide level2">
 <h2>Package check</h2>
 <p>Inspect your toolbox before lending it out!</p>
 <ul>
-<li>Is there anything in there that shouldn’t be in there? :check:</li>
+<li>Is there anything in there that shouldn’t be in there?</li>
 <li>Is it too heavy?</li>
 <li>Does it have all the right instructions?</li>
 </ul>
 <aside class="notes">
-<p>An inspection before lending the box — ensures all tools are there and safe.</p>
-<p>Before selling or lending the toolbox, the inspector goes through each tool, checks the labels, makes sure nothing’s missing or rusty, and confirms all the parts match the manufacturer’s description.</p>
+<p>An inspection before lending the box, ensures all tools are there and safe.</p>
 <p>If something fails inspection, you get a report telling you exactly what to fix.</p>
 <ul>
 <li>Can someone carry the toolbox?</li>
@@ -466,109 +516,44 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="explore-dplyr" class="slide level2">
-<h2>Explore {dplyr}</h2>
-<p>Key point: You don’t have to write most of these files by hand</p>
-</section></section>
-<section>
-<section id="lets-build" class="title-slide slide level1 center">
-<h1>Let’s build 🛠️</h1>
-
+<section id="package-check-1" class="slide level2">
+<h2>👀 Package check</h2>
 </section>
-<section id="demo-create-an-r-package" class="slide level2">
-<h2>Demo 👀: Create an R package</h2>
-<pre><code>usethis::create_package()</code></pre>
-</section>
-<section id="your-turn-create-an-r-package" class="slide level2">
-<h2>Your turn 👩‍💻: Create an R package</h2>
-<pre><code>usethis::create_package()</code></pre>
-</section>
-<section id="demo-add-a-function" class="slide level2">
-<h2>Demo 👀: Add a function</h2>
-</section>
-<section id="your-turn-add-a-function" class="slide level2">
-<h2>Your turn 👩‍💻: Add a function</h2>
-</section>
-<section id="demo-document-your-function" class="slide level2">
-<h2>Demo 👀: Document your function</h2>
-</section>
-<section id="roxygen" class="slide level2">
-<h2>Roxygen</h2>
+<section id="package-check-2" class="slide level2">
+<h2>👩‍💻 Package check</h2>
 <ul>
-<li>Run <code>roxygen2::document()</code></li>
+<li><p>Run <code>devtools::check()</code></p></li>
+<li><p>Don’t worry if it doesn’t all pass!</p></li>
 </ul>
 </section>
-<section id="your-turn-document-your-function" class="slide level2">
-<h2>Your turn 👩‍💻: Document your function</h2>
-<ol type="1">
-<li><p>Add roxygen strings</p></li>
-<li><p>Run <code>devtools::document()</code></p></li>
-<li><p>Run <code>devtools::install()</code></p></li>
-<li><p>View the help file <code>?test</code></p></li>
-</ol>
-<p>Introduce the process of developing it (run devtools often!)</p>
-<ol type="1">
-<li><p>Add a second function. INTERNAL</p></li>
+<section id="choose-your-own-adventure" class="slide level2">
+<h2>👩‍💻 Choose your own adventure</h2>
+<ul>
+<li><p>Add a second function</p></li>
 <li><p>Create a vignette:</p></li>
-</ol>
-<pre><code>usethis::use_vignette("intro")</code></pre>
-<ol type="1">
+</ul>
+<p><code>usethis::use_vignette("intro")</code></p>
+<ul>
 <li>Add a test:</li>
-</ol>
+</ul>
 <pre><code>usethis::use_testthat()
 usethis::use_test("hello")</code></pre>
-<ol type="1">
-<li>Customise <code>DESCRIPTION</code> metadata.</li>
-</ol>
 </section>
-<section id="developer-process" class="slide level2">
-<h2>Developer process</h2>
+<section id="share-your-package" class="slide level2">
+<h2>Share your package</h2>
 <ul>
-<li>edit</li>
-<li>document()</li>
-<li>build()</li>
-<li>check()</li>
+<li>CRAN: <code>install.packages("biketools.zip")</code></li>
+<li>GitHub: <code>devtools::install_github("statsrhian/biketools.zip")</code></li>
+<li>Local install: <code>devtools::install_local("biketools.zip")</code></li>
 </ul>
-</section>
-<section id="package-check-1" class="slide level2">
-<h2>Package check</h2>
-<ul>
-<li>Don’t worry if it doesn’t all pass</li>
-</ul>
-</section>
-<section id="sharing-it" class="slide level2">
-<h2>Sharing it</h2>
-<ul>
-<li>What is CRAN</li>
-<li>GitHub</li>
-<li>Local install</li>
-</ul>
-<pre><code>usethis::use_git()
-usethis::use_github()</code></pre>
-</section></section>
-<section>
-<section id="wrap-up" class="title-slide slide level1 center">
-<h1>Wrap up</h1>
+<!---
 
-</section>
-<section id="recap-of-components" class="slide level2">
-<h2>Recap of components</h2>
-<p>Show the “package lifecycle” diagram:</p>
-<p>Create</p>
-<p>Add functions/docs</p>
-<p>Test</p>
-<p>Share</p>
-</section>
-<section id="just-one-more-thing" class="slide level2">
-<h2>Just one more thing…</h2>
-<ul>
-<li><p>One thing I learned…</p></li>
-<li><p>One thing I want to try later…</p></li>
-<li><p>One thing I still have a question about…</p></li>
-</ul>
-</section>
-<section id="resources" class="slide level2">
-<h2>Resources</h2>
+## Reflect...
+- One thing I learned…
+- One thing I want to try later…
+- One thing I still have a question about…
+
+--->
 
 
 </section></section>
