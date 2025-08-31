@@ -416,11 +416,63 @@ Don't worry if it doesn't all pass!
 
 ## Developer process
 
-1.  edit
-1. `devtools::document()`
-1. `devtools::install()`
-1. `devtools::check()`
+```{mermaid}
+%%| eval: True
+%%| echo: False
+flowchart TD
+  start((Current<br>package)) --> editc[[Edit existing code]]
+  editc --> loadall["`devtools::load_all()`"]
 
+  start --> doc[[Edit documentation]]
+  doc --> devdoc["devtools::document()"]
+  
+  start --> newfn[[Write new function]]
+  newfn --> docload["
+    devtools::document()
+    devtools::load_all()
+  "]
+
+  start --> ready{Ready to<br>publish}
+  ready --> check["
+    devtools::check()
+    devtools::install()
+  "]
+  check --> publish(Publish app)
+```
+
+## Developer process
+
+::::{.columns}
+
+:::{.column}
+### Editing code
+
+1. Make code changes
+1. `devtools::load_all()`{.r}
+
+### Add new function
+
+1. Create  and `@export`{.r} function.
+1. `devtools::document()`{.r}
+1. `devtools::load_all()`{.r}
+
+:::
+
+:::{.column}
+
+### Editing docs
+
+1. Edit function docs
+1. `devtools::document()`{.r}
+
+### All changes ready
+
+1. `devtools::check()`{.r}
+1. `devtools::install()`{.r}
+1. Publish code.
+
+:::
+::::
 
 ## Share your package
 
