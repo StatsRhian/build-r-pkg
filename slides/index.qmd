@@ -280,7 +280,7 @@ Could manually edit it FIRST `export(hello)`{.r} and then show later how it's ge
 
 ## 👩‍💻 Add a function
 
-- Copy the `add()` function in `R/add.R`
+- Copy the `add()`{.r} function in `R/add.R`
 
     ```r
     add <- function(x, y) {
@@ -288,9 +288,9 @@ Could manually edit it FIRST `export(hello)`{.r} and then show later how it's ge
     }
     ```
 
-- Add `export(add)` to `NAMESPACE`
+- Add `export(add)`{.r} to `NAMESPACE`
 
-- Run `devtools::install()`
+- Run `devtools::install()`{.r}
 
 - Try out your function `add(3, 4)`{.r}
 
@@ -299,7 +299,7 @@ Could manually edit it FIRST `export(hello)`{.r} and then show later how it's ge
 
 :::{.notes}
 
-```
+```r
 #' Add together two numbers
 #' 
 #' @param x A number.
@@ -363,7 +363,7 @@ If something fails inspection, you get a report telling you exactly what to fix.
 
 ## 👩‍💻 Package check
 
-1. Run `devtools::check()`
+1. Run `devtools::check()`{.r}
 
 Don't worry if it doesn't all pass!
 
@@ -372,15 +372,15 @@ Don't worry if it doesn't all pass!
 
 ## 👩‍💻 Using other functions
 
-1. Add `cli_success("You added two numbers")` to `add()`
+1. Add `cli_success("You added two numbers")`{.r} to `add()`{.r}
 
 1. Run **check**
 
-1. Prefix with `cli::`
+1. Prefix with `cli::`{.r}
 
 1. Run **check**
 
-1. Use `usethis::use_package("cli")` to update `Imports:`
+1. Use `usethis::use_package("cli")`{.r} to update `Imports:`
 
 1. Run **check**
 
@@ -390,26 +390,25 @@ Don't worry if it doesn't all pass!
 :::: {.columns}
 ::: {.column}
 
+- `use_readme_md()`{.r}
 
-- `use_readme_md()`
+- `use_roxygen_md()`{.r}
 
-- `use_roxygen_md()`
+- `use_news_md()`{.r}
 
-- `use_news_md()`
-
-- `use_github_actions()`
-
-- `use_data()`
-
-- `use_testthat()`
-
-- `use_vignettes()`
-
-- `use_pkgdown()`
-
+- `use_github_actions()`{.r}
 
 :::
 ::: {.column}
+
+- `use_data()`{.r}
+
+- `use_testthat()`{.r}
+
+- `use_vignettes()`{.r}
+
+- `use_pkgdown()`{.r}
+
 :::
 :::: 
 
@@ -417,20 +416,20 @@ Don't worry if it doesn't all pass!
 ## Developer process
 
 1.  edit
-1. `devtools::document()`
-1. `devtools::install()`
-1. `devtools::check()`
+1. `devtools::document()`{.r}
+1. `devtools::install()`{.r}
+1. `devtools::check()`{.r}
 
 
 ## Share your package
 
 ::: {.incremental}
 
-- Local install: `devtools::install_local("biketools")`
+- Local install: `devtools::install_local("biketools")`{.r}
 
-- GitHub: `devtools::install_github("statsrhian/biketools")`
+- GitHub: `devtools::install_github("statsrhian/biketools")`{.r}
 
-- CRAN: `install.packages("biketools.zip")`
+- CRAN: `install.packages("biketools.zip")`{.r}
 
 :::
 
@@ -441,7 +440,7 @@ Don't worry if it doesn't all pass!
 
 - Remember to make a [hex sticker](https://connect.thinkr.fr/hexmake/)
 
-- Let me know how you get on 📧 @statRhian
+- Let me know how you get on 📧 @statsRhian
 :::
 
 ::: {.column}
@@ -457,8 +456,3 @@ Don't worry if it doesn't all pass!
 - One thing I still have a question about…
 
 --->
-
-
-
-
-
