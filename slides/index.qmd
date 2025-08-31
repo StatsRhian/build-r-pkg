@@ -72,7 +72,7 @@ It’s not just any box of random tools — it’s a kit that someone else shoul
 
 ## What's in your toolbox?
 
-:::::: {.columns}
+:::: {.columns}
 ::: {.column}
 ```{=html}
 <pre>
@@ -81,9 +81,9 @@ biketools/
 ```
 :::
 ::: {.column}
-![](img/toolbox-closed.jpg){fig-alt="TODO: Add alt text."}
+![](img/toolbox-closed.jpg){fig-alt="A toolbox with the lid locked in the closed position."}
 :::
-::: 
+::::
 
 :::{.notes}
 It’s not just any box of random tools, it’s a kit that someone else should be able to pick up and use immediately without calling you for instructions.
@@ -92,7 +92,7 @@ It’s not just any box of random tools, it’s a kit that someone else should b
 
 ## `DESCRIPTION`
 
-:::::: {.columns}
+:::: {.columns}
 ::: {.column}
 ```{=html}
 <pre>
@@ -102,9 +102,9 @@ biketools/
 ```
 :::
 ::: {.column}
-![](img/toolbox-label.jpg){fig-alt="TODO: Add alt text."}
+![](img/toolbox-label.jpg){fig-alt="The lid of a toolbox with a label on it, describing that the box contains bike tools. The label also says who the toolbox belongs to and featues a version number."}
 :::
-::: 
+::::
 
 :::{.notes}
 
@@ -115,7 +115,7 @@ Without this, no one knows what kind of work the toolbox is meant for, is it for
 
 ## `R/` folder
 
-:::::: {.columns}
+:::: {.columns}
 ::: {.column}
 ```{=html}
 <pre>
@@ -130,9 +130,9 @@ biketools/
 ```
 :::
 ::: {.column}
-![](img/toolbox-tools.png){fig-alt="TODO: Add alt text."}
+![](img/toolbox-tools.png){fig-alt="The toolbox with the lid open to reveal a collection of 4 different bicycle maintenance tools sitting on a tray."}
 :::
-::: 
+::::
 
 :::{.notes}
 This is where the actual tools (functions) live.
@@ -145,7 +145,7 @@ The better organised and labelled they are, the faster someone can find what the
 
 ## `man/` folder
 
-:::::: {.columns}
+:::: {.columns}
 ::: {.column}
 ```{=html}
 <pre>
@@ -165,9 +165,9 @@ biketools/
 ```
 :::
 ::: {.column}
-![](img/toolbox-manual.jpg){fig-alt="TODO: Add alt text."}
+![](img/toolbox-manual.jpg){fig-alt="An open toolbox with a yellow label stuck to each bicycle maintenance tool that is on the tray. Each label gives the name of that tool and a description of how to use the tool."}
 :::
-::: 
+::::
 
 :::{.notes}
 These tell you what the tool does, how to hold it, and give examples of using it safely.
@@ -176,7 +176,7 @@ These tell you what the tool does, how to hold it, and give examples of using it
 
 ## `NAMESPACE`
 
-:::::: {.columns}
+:::: {.columns}
 ::: {.column}
 ```{=html}
 <pre>
@@ -197,9 +197,9 @@ biketools/
 ```
 :::
 ::: {.column}
-![](img/toolbox-shelf.jpg){fig-alt="TODO: Add alt text."}
+![](img/toolbox-shelf.jpg){fig-alt="The open toolbox shows a tray of 4 tools at the top, with a single label stating the names of the 4 tools you can use. The label also advises that you might need to borrow gloves from Sally and another wrench from Jack. The tray sits at an angle allowing a glimpse at a collection of tools hiding at the bottom of the toolbox."}
 :::
-::: 
+::::
 
 :::{.notes}
 
@@ -214,7 +214,7 @@ biketools/
 
 ## Extra bits
 
-::::: {.columns}
+:::: {.columns}
 ::: {.column}
 ```{=html}
 <pre>
@@ -242,9 +242,9 @@ biketools/
 :::
 
 ::: {.column}
-![](img/toolbox-extras.jpg){fig-alt="TODO: Add alt text."}
+![](img/toolbox-extras.jpg){fig-alt="The closed toolbox has a label on the side stating the toolbox has been checked and providing a longer description of what to use the toolbox for. Behind the toolbox is a spare tyre and an illustrated book of bicycle maintenance."}
 :::
-::: 
+::::
 
 :::{.notes}
 
@@ -445,7 +445,7 @@ Don't worry if it doesn't all pass!
 :::
 
 ::: {.column}
-![](img/hex-RSSConf2025.png){fig-alt="TODO: Add alt text." fig-align="right" width=60%}
+![](img/hex-RSSConf2025.png){fig-alt="Example hex sticker showing the RSSConf2025 hashtag and and image of Edinburgh Castle" fig-align="right" width=60%}
 :::
 :::: 
 
