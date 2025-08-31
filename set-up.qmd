@@ -6,9 +6,13 @@ You'll need the following R packages installed
 
 - {devtools}
 - {usethis}
+- {cli}
+
+You can install these with `install.packages(c("devtools", "usethis", "cli"))`{.r}
 
 You can check if everything is set up correctly by running:
-```
-> devtools::has_devel()
-Your system is ready to build packages!
+
+```r
+devtools::has_devel()
+## Your system is ready to build packages!
 ```

@@ -8,34 +8,11 @@ css: styles.css
 format: revealjs
 brand: ../_brand.yml
 execute:
-  echo: false
+  echo: true
   eval: false
 footer: "{{< fa brands github >}} {{< fa brands bluesky >}} {{< fa brands mastodon >}} {{< fa brands linkedin >}} [@statsRhian](https://bsky.app/profile/statsrhian.bsky.social) &nbsp; {{< fa laptop-code >}} [statsrhian.github.io/build-r-pkg](https://statsrhian.github.io/build-r-pkg)"
 
 ---
-
-<!--- TO FIX
-
-open with a personal story: “When I first started, I kept copy-pasting functions across projects. Then I realised… a package is just a tidy toolbox!” → hooks people in emotionally.
-
-Active learning: Add short “think-pair-share” moments (“What’s one function you’d put in your personal package?”). Keeps energy up.
-
-Next steps slide: End with clear “where to go from here” (Hadley’s R Packages book, r-pkgs.org, pkgdown, joining rOpenSci, etc.). Helps motivated learners continue.
-
-- should I mention devtools::load_all()
-- tidy notes
-- add alt text
-- teach IMPORTS?
-- remove vignette?
-
-Engagement / reflection
-
-I love your hidden reflective slide at the end. I’d actually bring it back in! Even a quick “turn to your neighbour and share one thing you learned” helps solidify learning.
-
-Maybe include a slide with common pitfalls/troubleshooting (“I forgot to run document(), why doesn’t help work?”).
-
-
---->
 
 ## Set-up 👩‍💻
 
@@ -45,9 +22,21 @@ Maybe include a slide with common pitfalls/troubleshooting (“I forgot to run d
 
 ### [statsrhian.github.io/build-r-pkg/set-up](https://statsrhian.github.io/build-r-pkg/set-up)
 
-- If you'd prefer to just want to sit back and watch - that's fine too 😊
+- If you'd prefer to just want to sit back and watch, that's fine too 😊
+
 
 # Welcome
+
+<!--- TO FIX
+
+“What’s one function you’d put in your personal package?”
+
+- Rewrite "developer slide"
+- should I mention devtools::load_all()
+- tidy notes
+- add alt text
+- add next steps to last slide (resources)
+--->
 
 ## What is an R package?
 
@@ -246,9 +235,8 @@ biketools/
 ├─ pkgdown/
 ├─ tests/
 ├─ vignettes/
-├─ READMD.md
-├─ NEWS.md
-├─ hex-sticker.png</span>
+├─ README.md
+├─ NEWS.md</span>
 </pre>
 ```
 :::
@@ -274,37 +262,38 @@ biketools/
 
 ## 👩‍💻 Create an R package
 
-- Run `usethis::create_package("sums")`
+- Run `usethis::create_package("sums")`{.r}
 - Open the `DESCRIPTION` file and customise it
-- Run `usethis::use_mit_license()`
-- Run `devtools::install()`
+- Run `usethis::use_mit_license()`{.r}
+- Run `devtools::install()`{.r}
 
 ## 👀 Add a function
 
 :::{.notes}
 
 Need to introduce adding functions without getting hung up on 
-`#' @export` and `NAMESPACE`
+`#' @export`{.r} and `NAMESPACE`
 
-Could manually edit it FIRST `export(hello)` and then show later how it's generated
+Could manually edit it FIRST `export(hello)`{.r} and then show later how it's generated
 
 :::
 
 ## 👩‍💻 Add a function
 
-- Create a new file in the `R/` folder
+- Copy the `add()` function in `R/add.R`
 
-- Write any function
+    ```r
+    add <- function(x, y) {
+      x + y
+    }
+    ```
+
+- Add `export(add)` to `NAMESPACE`
 
 - Run `devtools::install()`
 
-- Try out your function
+- Try out your function `add(3, 4)`{.r}
 
-```
-hello <- function() {
-print("My first function!")
-}
-```
 
 ## 👀 Document your function
 
@@ -331,11 +320,99 @@ add <- function(x, y) {
 
 1. Add some {roxygen2} strings
 
-1. Run `devtools::document()`
+    ```r
+    #' Add together two numbers
+    #' 
+    #' @param x A number.
+    #' @param y A number.
+    #' @returns A numeric vector.
+    #' @examples
+    #' add(1, 1)
+    #' add(10, 1)
+    #' @export
+    add <- function(x, y) {
+      x + y
+    }
+    ```
 
-1. Run `devtools::install()`
+1. Run `devtools::document()`{.r}; `devtools::install()`{.r}
 
-1. View the help file `?test`
+1. View the help file `?add`{.r}
+
+
+
+## Package check
+
+Inspect your toolbox before lending it out
+
+- Do all the tools work?
+- Does they have instruction manuals?
+- Is there anything in there that shouldn't be in there?
+- Is it too heavy?
+
+
+:::{.notes}
+
+An inspection before lending the box, ensures all tools are there and safe.
+
+If something fails inspection, you get a report telling you exactly what to fix.
+
+:::
+
+## 👀 Package check
+
+## 👩‍💻 Package check
+
+1. Run `devtools::check()`
+
+Don't worry if it doesn't all pass!
+
+
+## 👀 Using other functions
+
+## 👩‍💻 Using other functions
+
+1. Add `cli_success("You added two numbers")` to `add()`
+
+1. Run **check**
+
+1. Prefix with `cli::`
+
+1. Run **check**
+
+1. Use `usethis::use_package("cli")` to update `Imports:`
+
+1. Run **check**
+
+## Usethis
+
+
+:::: {.columns}
+::: {.column}
+
+
+- `use_readme_md()`
+
+- `use_roxygen_md()`
+
+- `use_news_md()`
+
+- `use_github_actions()`
+
+- `use_data()`
+
+- `use_testthat()`
+
+- `use_vignettes()`
+
+- `use_pkgdown()`
+
+
+:::
+::: {.column}
+:::
+:::: 
+
 
 ## Developer process
 
@@ -344,68 +421,33 @@ add <- function(x, y) {
 1. `devtools::install()`
 1. `devtools::check()`
 
-## Package check
-
-Inspect your toolbox before lending it out!
-
-- Is there anything in there that shouldn't be in there?
-- Is it too heavy?
-- Does it have all the right instructions?
-
-:::{.notes}
-
-An inspection before lending the box, ensures all tools are there and safe.
-
-If something fails inspection, you get a report telling you exactly what to fix.
-
-- Can someone carry the toolbox?
-- Is there anything in there that shouldn't be in there?
-- Is it too full?
-- Does it have all the right instructions?
-
-:::
-
-## 👀 Package check
-
-## 👩‍💻 Package check
-
-- Run `devtools::check()`
-
-- Don't worry if it doesn't all pass!
-
-## 👩‍💻 Choose your own adventure
-
-::::: {.columns}
-::: {.column}
-
-
-- Create a second function
-
-- Create a vignette `usethis::use_vignette("times-tables")`
-
-- Add a test 
-
-- Create a [hex sticker](https://connect.thinkr.fr/hexmake/)
-```
-usethis::use_testthat()
-usethis::use_test("hello")
-```
-
-
-:::
-
-::: {.column}
-![](img/hex-RSSConf2025.png){fig-alt="TODO: Add alt text."}
-:::
-::: 
-
 
 ## Share your package
 
-- CRAN: `install.packages("biketools.zip")`
-- GitHub: `devtools::install_github("statsrhian/biketools")`
+::: {.incremental}
+
 - Local install: `devtools::install_local("biketools")`
 
+- GitHub: `devtools::install_github("statsrhian/biketools")`
+
+- CRAN: `install.packages("biketools.zip")`
+
+:::
+
+## Go forth and build! 👷‍♀️
+
+:::: {.columns}
+::: {.column}
+
+- Remember to make a [hex sticker](https://connect.thinkr.fr/hexmake/)
+
+- Let me know how you get on 📧 @statRhian
+:::
+
+::: {.column}
+![](img/hex-RSSConf2025.png){fig-alt="TODO: Add alt text." fig-align="right" width=60%}
+:::
+:::: 
 
 <!---
 
