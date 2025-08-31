@@ -151,7 +151,7 @@
     "href": "slides/index.html#usethis",
     "title": "Build your own toolbox 🧰",
     "section": "Usethis",
-    "text": "Usethis\n\n\n\nuse_readme_md()\nuse_roxygen_md()\nuse_news_md()\nuse_github_actions()\nuse_data()\nuse_testthat()\nuse_vignettes()\nuse_pkgdown()"
+    "text": "Usethis\n\n\n\nuse_readme_md()\nuse_roxygen_md()\nuse_news_md()\nuse_github_actions()\n\n\n\nuse_data()\nuse_testthat()\nuse_vignettes()\nuse_pkgdown()"
   },
   {
     "objectID": "slides/index.html#developer-process",
@@ -172,7 +172,7 @@
     "href": "slides/index.html#go-forth-and-build",
     "title": "Build your own toolbox 🧰",
     "section": "Go forth and build! 👷‍♀️",
-    "text": "Go forth and build! 👷‍♀️\n\n\n\nRemember to make a hex sticker\nLet me know how you get on 📧 @statRhian"
+    "text": "Go forth and build! 👷‍♀️\n\n\n\nRemember to make a hex sticker\nLet me know how you get on 📧 @statsRhian"
   },
   {
     "objectID": "slides.html",

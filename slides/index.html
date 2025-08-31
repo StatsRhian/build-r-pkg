@@ -521,30 +521,30 @@
 <section id="add-a-function-1" class="slide level2">
 <h2>👩‍💻 Add a function</h2>
 <ul>
-<li><p>Copy the <code>add()</code> function in <code>R/add.R</code></p>
+<li><p>Copy the <code class="sourceCode r"><span class="fu">add</span>()</code> function in <code>R/add.R</code></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
 <span id="cb1-2"><a></a>  x <span class="sc">+</span> y</span>
 <span id="cb1-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Add <code>export(add)</code> to <code>NAMESPACE</code></p></li>
-<li><p>Run <code>devtools::install()</code></p></li>
+<li><p>Add <code class="sourceCode r"><span class="fu">export</span>(add)</code> to <code>NAMESPACE</code></p></li>
+<li><p>Run <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">install</span>()</code></p></li>
 <li><p>Try out your function <code class="sourceCode r"><span class="fu">add</span>(<span class="dv">3</span>, <span class="dv">4</span>)</code></p></li>
 </ul>
 </section>
 <section id="document-your-function" class="slide level2">
 <h2>👀 Document your function</h2>
 <aside class="notes">
-<pre><code>#' Add together two numbers
-#' 
-#' @param x A number.
-#' @param y A number.
-#' @returns A numeric vector.
-#' @examples
-#' add(1, 1)
-#' add(10, 1)
-#' @export
-add &lt;- function(x, y) {
-  x + y
-}</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co">#' Add together two numbers</span></span>
+<span id="cb2-2"><a></a><span class="co">#' </span></span>
+<span id="cb2-3"><a></a><span class="co">#' @param x A number.</span></span>
+<span id="cb2-4"><a></a><span class="co">#' @param y A number.</span></span>
+<span id="cb2-5"><a></a><span class="co">#' @returns A numeric vector.</span></span>
+<span id="cb2-6"><a></a><span class="co">#' @examples</span></span>
+<span id="cb2-7"><a></a><span class="co">#' add(1, 1)</span></span>
+<span id="cb2-8"><a></a><span class="co">#' add(10, 1)</span></span>
+<span id="cb2-9"><a></a><span class="co">#' @export</span></span>
+<span id="cb2-10"><a></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb2-11"><a></a>  x <span class="sc">+</span> y</span>
+<span id="cb2-12"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -607,7 +607,7 @@ add &lt;- function(x, y) {
 <section id="package-check-2" class="slide level2">
 <h2>👩‍💻 Package check</h2>
 <ol type="1">
-<li>Run <code>devtools::check()</code></li>
+<li>Run <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">check</span>()</code></li>
 </ol>
 <p>Don’t worry if it doesn’t all pass!</p>
 </section>
@@ -617,11 +617,11 @@ add &lt;- function(x, y) {
 <section id="using-other-functions-1" class="slide level2">
 <h2>👩‍💻 Using other functions</h2>
 <ol type="1">
-<li><p>Add <code>cli_success("You added two numbers")</code> to <code>add()</code></p></li>
+<li><p>Add <code class="sourceCode r"><span class="fu">cli_success</span>(<span class="st">"You added two numbers"</span>)</code> to <code class="sourceCode r"><span class="fu">add</span>()</code></p></li>
 <li><p>Run <strong>check</strong></p></li>
-<li><p>Prefix with <code>cli::</code></p></li>
+<li><p>Prefix with <code class="sourceCode r">cli<span class="sc">::</span></code></p></li>
 <li><p>Run <strong>check</strong></p></li>
-<li><p>Use <code>usethis::use_package("cli")</code> to update <code>Imports:</code></p></li>
+<li><p>Use <code class="sourceCode r">usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">"cli"</span>)</code> to update <code>Imports:</code></p></li>
 <li><p>Run <strong>check</strong></p></li>
 </ol>
 </section>
@@ -630,34 +630,35 @@ add &lt;- function(x, y) {
 <div class="columns">
 <div class="column">
 <ul>
-<li><p><code>use_readme_md()</code></p></li>
-<li><p><code>use_roxygen_md()</code></p></li>
-<li><p><code>use_news_md()</code></p></li>
-<li><p><code>use_github_actions()</code></p></li>
-<li><p><code>use_data()</code></p></li>
-<li><p><code>use_testthat()</code></p></li>
-<li><p><code>use_vignettes()</code></p></li>
-<li><p><code>use_pkgdown()</code></p></li>
+<li><p><code class="sourceCode r"><span class="fu">use_readme_md</span>()</code></p></li>
+<li><p><code class="sourceCode r"><span class="fu">use_roxygen_md</span>()</code></p></li>
+<li><p><code class="sourceCode r"><span class="fu">use_news_md</span>()</code></p></li>
+<li><p><code class="sourceCode r"><span class="fu">use_github_actions</span>()</code></p></li>
 </ul>
 </div><div class="column">
-
+<ul>
+<li><p><code class="sourceCode r"><span class="fu">use_data</span>()</code></p></li>
+<li><p><code class="sourceCode r"><span class="fu">use_testthat</span>()</code></p></li>
+<li><p><code class="sourceCode r"><span class="fu">use_vignettes</span>()</code></p></li>
+<li><p><code class="sourceCode r"><span class="fu">use_pkgdown</span>()</code></p></li>
+</ul>
 </div></div>
 </section>
 <section id="developer-process" class="slide level2">
 <h2>Developer process</h2>
 <ol type="1">
 <li>edit</li>
-<li><code>devtools::document()</code></li>
-<li><code>devtools::install()</code></li>
-<li><code>devtools::check()</code></li>
+<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">document</span>()</code></li>
+<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">install</span>()</code></li>
+<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">check</span>()</code></li>
 </ol>
 </section>
 <section id="share-your-package" class="slide level2">
 <h2>Share your package</h2>
 <ul>
-<li class="fragment"><p>Local install: <code>devtools::install_local("biketools")</code></p></li>
-<li class="fragment"><p>GitHub: <code>devtools::install_github("statsrhian/biketools")</code></p></li>
-<li class="fragment"><p>CRAN: <code>install.packages("biketools.zip")</code></p></li>
+<li class="fragment"><p>Local install: <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">install_local</span>(<span class="st">"biketools"</span>)</code></p></li>
+<li class="fragment"><p>GitHub: <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"statsrhian/biketools"</span>)</code></p></li>
+<li class="fragment"><p>CRAN: <code class="sourceCode r"><span class="fu">install.packages</span>(<span class="st">"biketools.zip"</span>)</code></p></li>
 </ul>
 </section>
 <section id="go-forth-and-build" class="slide level2">
@@ -666,7 +667,7 @@ add &lt;- function(x, y) {
 <div class="column">
 <ul>
 <li><p>Remember to make a <a href="https://connect.thinkr.fr/hexmake/">hex sticker</a></p></li>
-<li><p>Let me know how you get on 📧 <span class="citation" data-cites="statRhian">@statRhian</span></p></li>
+<li><p>Let me know how you get on 📧 <span class="citation" data-cites="statsRhian">@statsRhian</span></p></li>
 </ul>
 </div><div class="column">
 <div class="quarto-figure quarto-figure-right">
