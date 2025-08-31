@@ -4,7 +4,7 @@
     "href": "slides/index.html#set-up",
     "title": "Build your own toolbox 🧰",
     "section": "Set-up 👩‍💻",
-    "text": "Set-up 👩‍💻\n\nWelcome! We’ll start the workshop shortly\nIf you want to code along with me, please follow the set-up instructions ⬇️\n\nstatsrhian.github.io/build-r-pkg/set-up\n\nIf you’d prefer to just want to sit back and watch - that’s fine too 😊"
+    "text": "Set-up 👩‍💻\n\nWelcome! We’ll start the workshop shortly\nIf you want to code along with me, please follow the set-up instructions ⬇️\n\nstatsrhian.github.io/build-r-pkg/set-up\n\nIf you’d prefer to just want to sit back and watch, that’s fine too 😊"
   },
   {
     "objectID": "slides/index.html#what-is-an-r-package",
@@ -67,7 +67,7 @@
     "href": "slides/index.html#extra-bits",
     "title": "Build your own toolbox 🧰",
     "section": "Extra bits",
-    "text": "Extra bits\n\n\nbiketools/\n├─ DESCRIPTION\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ NAMESPACE\n├─ data/\n├─ pkgdown/\n├─ tests/\n├─ vignettes/\n├─ READMD.md\n├─ NEWS.md\n├─ hex-sticker.png\n\n\n\n\n\n\nDo my tools work correctly?\nHow to do a basic bike service\nSpare bit of chain for trying chain breaker\nGlossy website\nCool paint job"
+    "text": "Extra bits\n\n\nbiketools/\n├─ DESCRIPTION\n├─ R/\n│  ├─ chain-braker.R\n│  ├─ multitool.R\n│  ├─ pedal-wrench.R\n│  ├─ tyre-levers.R\n├─ man/\n│  ├─ chain-braker.Rd\n│  ├─ multitool.Rd\n│  ├─ pedal-wrench.Rd\n│  ├─ tyre-levers.Rd\n├─ NAMESPACE\n├─ data/\n├─ pkgdown/\n├─ tests/\n├─ vignettes/\n├─ README.md\n├─ NEWS.md\n\n\n\n\n\n\nDo my tools work correctly?\nHow to do a basic bike service\nSpare bit of chain for trying chain breaker\nGlossy website\nCool paint job"
   },
   {
     "objectID": "slides/index.html#create-an-r-package",
@@ -95,7 +95,7 @@
     "href": "slides/index.html#add-a-function-1",
     "title": "Build your own toolbox 🧰",
     "section": "👩‍💻 Add a function",
-    "text": "👩‍💻 Add a function\n\nCreate a new file in the R/ folder\nWrite any function\nRun devtools::install()\nTry out your function\n\nhello &lt;- function() {\nprint(\"My first function!\")\n}"
+    "text": "👩‍💻 Add a function\n\nCopy the add() function in R/add.R\nadd &lt;- function(x, y) {\n  x + y\n}\nAdd export(add) to NAMESPACE\nRun devtools::install()\nTry out your function add(3, 4)"
   },
   {
     "objectID": "slides/index.html#document-your-function",
@@ -109,21 +109,14 @@
     "href": "slides/index.html#document-your-function-1",
     "title": "Build your own toolbox 🧰",
     "section": "👩‍💻 Document your function",
-    "text": "👩‍💻 Document your function\n\nAdd some {roxygen2} strings\nRun devtools::document()\nRun devtools::install()\nView the help file ?test"
-  },
-  {
-    "objectID": "slides/index.html#developer-process",
-    "href": "slides/index.html#developer-process",
-    "title": "Build your own toolbox 🧰",
-    "section": "Developer process",
-    "text": "Developer process\n\nedit\ndevtools::document()\ndevtools::install()\ndevtools::check()"
+    "text": "👩‍💻 Document your function\n\nAdd some {roxygen2} strings\n#' Add together two numbers\n#' \n#' @param x A number.\n#' @param y A number.\n#' @returns A numeric vector.\n#' @examples\n#' add(1, 1)\n#' add(10, 1)\n#' @export\nadd &lt;- function(x, y) {\n  x + y\n}\nRun devtools::document(); devtools::install()\nView the help file ?add"
   },
   {
     "objectID": "slides/index.html#package-check",
     "href": "slides/index.html#package-check",
     "title": "Build your own toolbox 🧰",
     "section": "Package check",
-    "text": "Package check\nInspect your toolbox before lending it out!\n\nIs there anything in there that shouldn’t be in there?\nIs it too heavy?\nDoes it have all the right instructions?\n\n\nAn inspection before lending the box, ensures all tools are there and safe.\nIf something fails inspection, you get a report telling you exactly what to fix.\n\nCan someone carry the toolbox?\nIs there anything in there that shouldn’t be in there?\nIs it too full?\nDoes it have all the right instructions?"
+    "text": "Package check\nInspect your toolbox before lending it out\n\nDo all the tools work?\nDoes they have instruction manuals?\nIs there anything in there that shouldn’t be in there?\nIs it too heavy?\n\n\nAn inspection before lending the box, ensures all tools are there and safe.\nIf something fails inspection, you get a report telling you exactly what to fix."
   },
   {
     "objectID": "slides/index.html#package-check-1",
@@ -137,21 +130,49 @@
     "href": "slides/index.html#package-check-2",
     "title": "Build your own toolbox 🧰",
     "section": "👩‍💻 Package check",
-    "text": "👩‍💻 Package check\n\nRun devtools::check()\nDon’t worry if it doesn’t all pass!"
+    "text": "👩‍💻 Package check\n\nRun devtools::check()\n\nDon’t worry if it doesn’t all pass!"
   },
   {
-    "objectID": "slides/index.html#choose-your-own-adventure",
-    "href": "slides/index.html#choose-your-own-adventure",
+    "objectID": "slides/index.html#using-other-functions",
+    "href": "slides/index.html#using-other-functions",
     "title": "Build your own toolbox 🧰",
-    "section": "👩‍💻 Choose your own adventure",
-    "text": "👩‍💻 Choose your own adventure\n\n\n\nCreate a second function\nCreate a vignette usethis::use_vignette(\"times-tables\")\nAdd a test\nCreate a hex sticker\n\nusethis::use_testthat()\nusethis::use_test(\"hello\")"
+    "section": "👀 Using other functions",
+    "text": "👀 Using other functions"
+  },
+  {
+    "objectID": "slides/index.html#using-other-functions-1",
+    "href": "slides/index.html#using-other-functions-1",
+    "title": "Build your own toolbox 🧰",
+    "section": "👩‍💻 Using other functions",
+    "text": "👩‍💻 Using other functions\n\nAdd cli_success(\"You added two numbers\") to add()\nRun check\nPrefix with cli::\nRun check\nUse usethis::use_package(\"cli\") to update Imports:\nRun check"
+  },
+  {
+    "objectID": "slides/index.html#usethis",
+    "href": "slides/index.html#usethis",
+    "title": "Build your own toolbox 🧰",
+    "section": "Usethis",
+    "text": "Usethis\n\n\n\nuse_readme_md()\nuse_roxygen_md()\nuse_news_md()\nuse_github_actions()\nuse_data()\nuse_testthat()\nuse_vignettes()\nuse_pkgdown()"
+  },
+  {
+    "objectID": "slides/index.html#developer-process",
+    "href": "slides/index.html#developer-process",
+    "title": "Build your own toolbox 🧰",
+    "section": "Developer process",
+    "text": "Developer process\n\nedit\ndevtools::document()\ndevtools::install()\ndevtools::check()"
   },
   {
     "objectID": "slides/index.html#share-your-package",
     "href": "slides/index.html#share-your-package",
     "title": "Build your own toolbox 🧰",
     "section": "Share your package",
-    "text": "Share your package\n\nCRAN: install.packages(\"biketools.zip\")\nGitHub: devtools::install_github(\"statsrhian/biketools\")\nLocal install: devtools::install_local(\"biketools\")"
+    "text": "Share your package\n\nLocal install: devtools::install_local(\"biketools\")\nGitHub: devtools::install_github(\"statsrhian/biketools\")\nCRAN: install.packages(\"biketools.zip\")"
+  },
+  {
+    "objectID": "slides/index.html#go-forth-and-build",
+    "href": "slides/index.html#go-forth-and-build",
+    "title": "Build your own toolbox 🧰",
+    "section": "Go forth and build! 👷‍♀️",
+    "text": "Go forth and build! 👷‍♀️\n\n\n\nRemember to make a hex sticker\nLet me know how you get on 📧 @statRhian"
   },
   {
     "objectID": "slides.html",
@@ -193,7 +214,7 @@
     "href": "set-up.html",
     "title": "👩‍💻 Set up",
     "section": "",
-    "text": "You’ll need the following R packages installed\n\n{devtools}\n{usethis}\n\nYou can check if everything is set up correctly by running:\n&gt; devtools::has_devel()\nYour system is ready to build packages!"
+    "text": "You’ll need the following R packages installed\n\n{devtools}\n{usethis}\n{cli}\n\nYou can install these with install.packages(c(\"devtools\", \"usethis\", \"cli\"))\nYou can check if everything is set up correctly by running:\ndevtools::has_devel()\n## Your system is ready to build packages!"
   },
   {
     "objectID": "index.html",

@@ -31,6 +31,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-cc88b92d56c1c2a7fc700fa5c1c1fe55.css">
   <link rel="stylesheet" href="styles.css">
@@ -144,31 +210,6 @@
 
   <p class="date">2025-09-03</p>
 </section>
-<section class="slide level2">
-
-<!--- TO FIX
-
-open with a personal story: “When I first started, I kept copy-pasting functions across projects. Then I realised… a package is just a tidy toolbox!” → hooks people in emotionally.
-
-Active learning: Add short “think-pair-share” moments (“What’s one function you’d put in your personal package?”). Keeps energy up.
-
-Next steps slide: End with clear “where to go from here” (Hadley’s R Packages book, r-pkgs.org, pkgdown, joining rOpenSci, etc.). Helps motivated learners continue.
-
-- should I mention devtools::load_all()
-- tidy notes
-- add alt text
-- teach IMPORTS?
-- remove vignette?
-
-Engagement / reflection
-
-I love your hidden reflective slide at the end. I’d actually bring it back in! Even a quick “turn to your neighbour and share one thing you learned” helps solidify learning.
-
-Maybe include a slide with common pitfalls/troubleshooting (“I forgot to run document(), why doesn’t help work?”).
-
-
---->
-</section>
 <section id="set-up" class="slide level2">
 <h2>Set-up 👩‍💻</h2>
 <ul>
@@ -177,13 +218,22 @@ Maybe include a slide with common pitfalls/troubleshooting (“I forgot to run d
 </ul>
 <h3 id="statsrhian.github.iobuild-r-pkgset-up"><a href="https://statsrhian.github.io/build-r-pkg/set-up">statsrhian.github.io/build-r-pkg/set-up</a></h3>
 <ul>
-<li>If you’d prefer to just want to sit back and watch - that’s fine too 😊</li>
+<li>If you’d prefer to just want to sit back and watch, that’s fine too 😊</li>
 </ul>
 </section>
 <section>
 <section id="welcome" class="title-slide slide level1 center">
 <h1>Welcome</h1>
+<!--- TO FIX
 
+“What’s one function you’d put in your personal package?”
+
+- Rewrite "developer slide"
+- should I mention devtools::load_all()
+- tidy notes
+- add alt text
+- add next steps to last slide (resources)
+--->
 </section>
 <section id="what-is-an-r-package" class="slide level2">
 <h2>What is an R package?</h2>
@@ -408,9 +458,8 @@ Maybe include a slide with common pitfalls/troubleshooting (“I forgot to run d
 ├─ pkgdown/
 ├─ tests/
 ├─ vignettes/
-├─ READMD.md
-├─ NEWS.md
-├─ hex-sticker.png</span>
+├─ README.md
+├─ NEWS.md</span>
 </pre>
 </div><div class="column">
 <p><img data-src="img/toolbox-extras.jpg" alt="TODO: Add alt text."></p>
@@ -446,17 +495,17 @@ Maybe include a slide with common pitfalls/troubleshooting (“I forgot to run d
 <section id="create-an-r-package-1" class="slide level2">
 <h2>👩‍💻 Create an R package</h2>
 <ul>
-<li>Run <code>usethis::create_package("sums")</code></li>
+<li>Run <code class="sourceCode r">usethis<span class="sc">::</span><span class="fu">create_package</span>(<span class="st">"sums"</span>)</code></li>
 <li>Open the <code>DESCRIPTION</code> file and customise it</li>
-<li>Run <code>usethis::use_mit_license()</code></li>
-<li>Run <code>devtools::install()</code></li>
+<li>Run <code class="sourceCode r">usethis<span class="sc">::</span><span class="fu">use_mit_license</span>()</code></li>
+<li>Run <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">install</span>()</code></li>
 </ul>
 </section>
 <section id="add-a-function" class="slide level2">
 <h2>👀 Add a function</h2>
 <aside class="notes">
-<p>Need to introduce adding functions without getting hung up on <code>#' @export</code> and <code>NAMESPACE</code></p>
-<p>Could manually edit it FIRST <code>export(hello)</code> and then show later how it’s generated</p>
+<p>Need to introduce adding functions without getting hung up on <code class="sourceCode r"><span class="co">#' @export</span></code> and <code>NAMESPACE</code></p>
+<p>Could manually edit it FIRST <code class="sourceCode r"><span class="fu">export</span>(hello)</code> and then show later how it’s generated</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -472,14 +521,14 @@ Maybe include a slide with common pitfalls/troubleshooting (“I forgot to run d
 <section id="add-a-function-1" class="slide level2">
 <h2>👩‍💻 Add a function</h2>
 <ul>
-<li><p>Create a new file in the <code>R/</code> folder</p></li>
-<li><p>Write any function</p></li>
+<li><p>Copy the <code>add()</code> function in <code>R/add.R</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb1-2"><a></a>  x <span class="sc">+</span> y</span>
+<span id="cb1-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Add <code>export(add)</code> to <code>NAMESPACE</code></p></li>
 <li><p>Run <code>devtools::install()</code></p></li>
-<li><p>Try out your function</p></li>
+<li><p>Try out your function <code class="sourceCode r"><span class="fu">add</span>(<span class="dv">3</span>, <span class="dv">4</span>)</code></p></li>
 </ul>
-<pre><code>hello &lt;- function() {
-print("My first function!")
-}</code></pre>
 </section>
 <section id="document-your-function" class="slide level2">
 <h2>👀 Document your function</h2>
@@ -511,38 +560,35 @@ add &lt;- function(x, y) {
 <section id="document-your-function-1" class="slide level2">
 <h2>👩‍💻 Document your function</h2>
 <ol type="1">
-<li><p>Add some {roxygen2} strings</p></li>
-<li><p>Run <code>devtools::document()</code></p></li>
-<li><p>Run <code>devtools::install()</code></p></li>
-<li><p>View the help file <code>?test</code></p></li>
-</ol>
-</section>
-<section id="developer-process" class="slide level2">
-<h2>Developer process</h2>
-<ol type="1">
-<li>edit</li>
-<li><code>devtools::document()</code></li>
-<li><code>devtools::install()</code></li>
-<li><code>devtools::check()</code></li>
+<li><p>Add some {roxygen2} strings</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co">#' Add together two numbers</span></span>
+<span id="cb3-2"><a></a><span class="co">#' </span></span>
+<span id="cb3-3"><a></a><span class="co">#' @param x A number.</span></span>
+<span id="cb3-4"><a></a><span class="co">#' @param y A number.</span></span>
+<span id="cb3-5"><a></a><span class="co">#' @returns A numeric vector.</span></span>
+<span id="cb3-6"><a></a><span class="co">#' @examples</span></span>
+<span id="cb3-7"><a></a><span class="co">#' add(1, 1)</span></span>
+<span id="cb3-8"><a></a><span class="co">#' add(10, 1)</span></span>
+<span id="cb3-9"><a></a><span class="co">#' @export</span></span>
+<span id="cb3-10"><a></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb3-11"><a></a>  x <span class="sc">+</span> y</span>
+<span id="cb3-12"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Run <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">document</span>()</code>; <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">install</span>()</code></p></li>
+<li><p>View the help file <code class="sourceCode r">?add</code></p></li>
 </ol>
 </section>
 <section id="package-check" class="slide level2">
 <h2>Package check</h2>
-<p>Inspect your toolbox before lending it out!</p>
+<p>Inspect your toolbox before lending it out</p>
 <ul>
+<li>Do all the tools work?</li>
+<li>Does they have instruction manuals?</li>
 <li>Is there anything in there that shouldn’t be in there?</li>
 <li>Is it too heavy?</li>
-<li>Does it have all the right instructions?</li>
 </ul>
 <aside class="notes">
 <p>An inspection before lending the box, ensures all tools are there and safe.</p>
 <p>If something fails inspection, you get a report telling you exactly what to fix.</p>
-<ul>
-<li>Can someone carry the toolbox?</li>
-<li>Is there anything in there that shouldn’t be in there?</li>
-<li>Is it too full?</li>
-<li>Does it have all the right instructions?</li>
-</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -560,34 +606,75 @@ add &lt;- function(x, y) {
 </section>
 <section id="package-check-2" class="slide level2">
 <h2>👩‍💻 Package check</h2>
-<ul>
-<li><p>Run <code>devtools::check()</code></p></li>
-<li><p>Don’t worry if it doesn’t all pass!</p></li>
-</ul>
+<ol type="1">
+<li>Run <code>devtools::check()</code></li>
+</ol>
+<p>Don’t worry if it doesn’t all pass!</p>
 </section>
-<section id="choose-your-own-adventure" class="slide level2">
-<h2>👩‍💻 Choose your own adventure</h2>
+<section id="using-other-functions" class="slide level2">
+<h2>👀 Using other functions</h2>
+</section>
+<section id="using-other-functions-1" class="slide level2">
+<h2>👩‍💻 Using other functions</h2>
+<ol type="1">
+<li><p>Add <code>cli_success("You added two numbers")</code> to <code>add()</code></p></li>
+<li><p>Run <strong>check</strong></p></li>
+<li><p>Prefix with <code>cli::</code></p></li>
+<li><p>Run <strong>check</strong></p></li>
+<li><p>Use <code>usethis::use_package("cli")</code> to update <code>Imports:</code></p></li>
+<li><p>Run <strong>check</strong></p></li>
+</ol>
+</section>
+<section id="usethis" class="slide level2">
+<h2>Usethis</h2>
 <div class="columns">
 <div class="column">
 <ul>
-<li><p>Create a second function</p></li>
-<li><p>Create a vignette <code>usethis::use_vignette("times-tables")</code></p></li>
-<li><p>Add a test</p></li>
-<li><p>Create a <a href="https://connect.thinkr.fr/hexmake/">hex sticker</a></p></li>
+<li><p><code>use_readme_md()</code></p></li>
+<li><p><code>use_roxygen_md()</code></p></li>
+<li><p><code>use_news_md()</code></p></li>
+<li><p><code>use_github_actions()</code></p></li>
+<li><p><code>use_data()</code></p></li>
+<li><p><code>use_testthat()</code></p></li>
+<li><p><code>use_vignettes()</code></p></li>
+<li><p><code>use_pkgdown()</code></p></li>
 </ul>
-<pre><code>usethis::use_testthat()
-usethis::use_test("hello")</code></pre>
 </div><div class="column">
-<p><img data-src="img/hex-RSSConf2025.png" alt="TODO: Add alt text."></p>
+
 </div></div>
+</section>
+<section id="developer-process" class="slide level2">
+<h2>Developer process</h2>
+<ol type="1">
+<li>edit</li>
+<li><code>devtools::document()</code></li>
+<li><code>devtools::install()</code></li>
+<li><code>devtools::check()</code></li>
+</ol>
 </section>
 <section id="share-your-package" class="slide level2">
 <h2>Share your package</h2>
 <ul>
-<li>CRAN: <code>install.packages("biketools.zip")</code></li>
-<li>GitHub: <code>devtools::install_github("statsrhian/biketools")</code></li>
-<li>Local install: <code>devtools::install_local("biketools")</code></li>
+<li class="fragment"><p>Local install: <code>devtools::install_local("biketools")</code></p></li>
+<li class="fragment"><p>GitHub: <code>devtools::install_github("statsrhian/biketools")</code></p></li>
+<li class="fragment"><p>CRAN: <code>install.packages("biketools.zip")</code></p></li>
 </ul>
+</section>
+<section id="go-forth-and-build" class="slide level2">
+<h2>Go forth and build! 👷‍♀️</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Remember to make a <a href="https://connect.thinkr.fr/hexmake/">hex sticker</a></p></li>
+<li><p>Let me know how you get on 📧 <span class="citation" data-cites="statRhian">@statRhian</span></p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><img data-src="img/hex-RSSConf2025.png" class="quarto-figure quarto-figure-right" style="width:60.0%" alt="TODO: Add alt text."></p>
+</figure>
+</div>
+</div></div>
 <!---
 
 ## Reflect...
