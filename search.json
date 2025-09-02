@@ -144,7 +144,7 @@
     "href": "slides/index.html#using-other-functions-1",
     "title": "Build your own toolbox 🧰",
     "section": "👩‍💻 Using other functions",
-    "text": "👩‍💻 Using other functions\n\nAdd cli_success(\"You added two numbers\") to add()\nRun check\nPrefix with cli::\nRun check\nUse usethis::use_package(\"cli\") to update Imports:\nRun check"
+    "text": "👩‍💻 Using other functions\n\nAdd cli_alert_success(\"You added two numbers\") to add()\nRun check\nPrefix with cli::\nRun check\nUse usethis::use_package(\"cli\") to update Imports:\nRun check"
   },
   {
     "objectID": "slides/index.html#usethis",
