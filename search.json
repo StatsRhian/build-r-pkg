@@ -95,7 +95,7 @@
     "href": "slides/index.html#add-a-function-1",
     "title": "Build your own toolbox 🧰",
     "section": "👩‍💻 Add a function",
-    "text": "👩‍💻 Add a function\n\nCopy the add() function in R/add.R\nadd &lt;- function(x, y) {\n  x + y\n}\nAdd export(add) to NAMESPACE\nRun devtools::install()\nTry out your function add(3, 4)"
+    "text": "👩‍💻 Add a function\n\nCopy the add() function in R/add.R\nadd &lt;- function(x, y) {\n  x + y\n}\nAdd export(add) to NAMESPACE\nRun devtools::load_all()\nTry out your function add(3, 4)"
   },
   {
     "objectID": "slides/index.html#document-your-function",
@@ -109,7 +109,7 @@
     "href": "slides/index.html#document-your-function-1",
     "title": "Build your own toolbox 🧰",
     "section": "👩‍💻 Document your function",
-    "text": "👩‍💻 Document your function\n\nAdd some {roxygen2} strings\n#' Add together two numbers\n#' \n#' @param x A number.\n#' @param y A number.\n#' @returns A numeric vector.\n#' @examples\n#' add(1, 1)\n#' add(10, 1)\n#' @export\nadd &lt;- function(x, y) {\n  x + y\n}\nRun devtools::document(); devtools::install()\nView the help file ?add"
+    "text": "👩‍💻 Document your function\n\nAdd some {roxygen2} strings\n#' Add together two numbers\n#' \n#' @param x A number.\n#' @param y A number.\n#' @returns A numeric vector.\n#' @examples\n#' add(1, 1)\n#' add(10, 1)\n#' @export\nadd &lt;- function(x, y) {\n  x + y\n}\nRun devtools::document(); devtools::load_all()\nView the help file ?add"
   },
   {
     "objectID": "slides/index.html#package-check",
