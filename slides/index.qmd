@@ -295,7 +295,7 @@ Could manually edit it FIRST `export(hello)`{.r} and then show later how it's ge
 
 - Add `export(add)`{.r} to `NAMESPACE`
 
-- Run `devtools::install()`{.r}
+- Run `devtools::load_all()`{.r}
 
 - Try out your function `add(3, 4)`{.r}
 
@@ -340,7 +340,7 @@ add <- function(x, y) {
     }
     ```
 
-1. Run `devtools::document()`{.r}; `devtools::install()`{.r}
+1. Run `devtools::document()`{.r}; `devtools::load_all()`{.r}
 
 1. View the help file `?add`{.r}
 
