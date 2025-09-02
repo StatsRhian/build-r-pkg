@@ -218,7 +218,8 @@
 </ul>
 <h3 id="statsrhian.github.iobuild-r-pkgset-up"><a href="https://statsrhian.github.io/build-r-pkg/set-up">statsrhian.github.io/build-r-pkg/set-up</a></h3>
 <ul>
-<li>If you’d prefer to just want to sit back and watch, that’s fine too 😊</li>
+<li><p>If you’d prefer to just want to sit back and watch, that’s fine too 😊</p></li>
+<li><p>WiFi: RSS <code>edin2025</code></p></li>
 </ul>
 </section>
 <section>
@@ -231,16 +232,13 @@
 - Rewrite "developer slide"
 - should I mention devtools::load_all()
 - tidy notes
-- add alt text
 - add next steps to last slide (resources)
 --->
 </section>
 <section id="what-is-an-r-package" class="slide level2">
 <h2>What is an R package?</h2>
-<ul>
-<li>A toolbox of useful functions</li>
-</ul>
-</section>
+
+<img data-src="img/toolbox-closed.jpg" alt="A toolbox with the lid locked in the closed position." class="r-stretch"></section>
 <section id="why-build-one" class="slide level2">
 <h2>Why build one?</h2>
 <ul>
@@ -255,12 +253,13 @@
 </section>
 <section id="myths" class="slide level2">
 <h2>Myths</h2>
+<p>It doesn’t have to…</p>
 <ul>
-<li>Doesn’t have to be on CRAN</li>
-<li>Doesn’t have to have hundreds of functions</li>
-<li>Doesn’t have to be useful for anyone else</li>
-<li>Doesn’t have to do anything fancy</li>
-<li>Doesn’t have to be scary</li>
+<li class="fragment">have hundreds of functions</li>
+<li class="fragment">be useful for anyone else</li>
+<li class="fragment">do anything fancy</li>
+<li class="fragment">be on CRAN</li>
+<li class="fragment">be scary</li>
 </ul>
 <aside class="notes">
 <ul>
@@ -645,13 +644,33 @@
 </div></div>
 </section>
 <section id="developer-process" class="slide level2">
-<h2>Developer process</h2>
+<h2>Developer process 🔄</h2>
+<div class="columns">
+<div class="column">
+<h3 id="editing-code">Editing code</h3>
 <ol type="1">
-<li>edit</li>
-<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">document</span>()</code></li>
-<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">install</span>()</code></li>
-<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">check</span>()</code></li>
+<li>Make code changes</li>
+<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">load_all</span>()</code></li>
 </ol>
+<h3 id="add-new-function">Add new function</h3>
+<ol type="1">
+<li>Create and <code class="sourceCode r"><span class="sc">@</span>export</code></li>
+<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">document</span>()</code></li>
+<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">load_all</span>()</code></li>
+</ol>
+</div><div class="column">
+<h3 id="editing-docs">Editing docs</h3>
+<ol type="1">
+<li>Edit function docs</li>
+<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">document</span>()</code></li>
+</ol>
+<h3 id="all-changes-ready">All changes ready</h3>
+<ol type="1">
+<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">check</span>()</code></li>
+<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">install</span>()</code></li>
+<li>Publish code</li>
+</ol>
+</div></div>
 </section>
 <section id="share-your-package" class="slide level2">
 <h2>Share your package</h2>
@@ -672,18 +691,10 @@
 </div><div class="column">
 <div class="quarto-figure quarto-figure-right">
 <figure>
-<p><img data-src="img/hex-RSSConf2025.png" class="quarto-figure quarto-figure-right" style="width:60.0%" alt="Example hex sticker showing the RSSConf2025 hashtag and and image of Edinburgh Castle"></p>
+<p><img data-src="img/hex-RSSConf2025.png" class="quarto-figure quarto-figure-right" style="width:80.0%" alt="Example hex sticker showing the RSSConf2025 hashtag and and image of Edinburgh Castle"></p>
 </figure>
 </div>
 </div></div>
-<!---
-
-## Reflect...
-- One thing I learned…
-- One thing I want to try later…
-- One thing I still have a question about…
-
---->
 
 
 </section></section>

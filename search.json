@@ -4,14 +4,14 @@
     "href": "slides/index.html#set-up",
     "title": "Build your own toolbox 🧰",
     "section": "Set-up 👩‍💻",
-    "text": "Set-up 👩‍💻\n\nWelcome! We’ll start the workshop shortly\nIf you want to code along with me, please follow the set-up instructions ⬇️\n\nstatsrhian.github.io/build-r-pkg/set-up\n\nIf you’d prefer to just want to sit back and watch, that’s fine too 😊"
+    "text": "Set-up 👩‍💻\n\nWelcome! We’ll start the workshop shortly\nIf you want to code along with me, please follow the set-up instructions ⬇️\n\nstatsrhian.github.io/build-r-pkg/set-up\n\nIf you’d prefer to just want to sit back and watch, that’s fine too 😊\nWiFi: RSS edin2025"
   },
   {
     "objectID": "slides/index.html#what-is-an-r-package",
     "href": "slides/index.html#what-is-an-r-package",
     "title": "Build your own toolbox 🧰",
     "section": "What is an R package?",
-    "text": "What is an R package?\n\nA toolbox of useful functions"
+    "text": "What is an R package?"
   },
   {
     "objectID": "slides/index.html#why-build-one",
@@ -25,7 +25,7 @@
     "href": "slides/index.html#myths",
     "title": "Build your own toolbox 🧰",
     "section": "Myths",
-    "text": "Myths\n\nDoesn’t have to be on CRAN\nDoesn’t have to have hundreds of functions\nDoesn’t have to be useful for anyone else\nDoesn’t have to do anything fancy\nDoesn’t have to be scary\n\n\n\nSmall packages are fine!\nBuild on the work of others\nPackage warnings are okay!"
+    "text": "Myths\nIt doesn’t have to…\n\nhave hundreds of functions\nbe useful for anyone else\ndo anything fancy\nbe on CRAN\nbe scary\n\n\n\nSmall packages are fine!\nBuild on the work of others\nPackage warnings are okay!"
   },
   {
     "objectID": "slides/index.html#whats-in-your-toolbox",
@@ -157,8 +157,8 @@
     "objectID": "slides/index.html#developer-process",
     "href": "slides/index.html#developer-process",
     "title": "Build your own toolbox 🧰",
-    "section": "Developer process",
-    "text": "Developer process\n\nedit\ndevtools::document()\ndevtools::install()\ndevtools::check()"
+    "section": "Developer process 🔄",
+    "text": "Developer process 🔄\n\n\nEditing code\n\nMake code changes\ndevtools::load_all()\n\nAdd new function\n\nCreate and @export\ndevtools::document()\ndevtools::load_all()\n\n\nEditing docs\n\nEdit function docs\ndevtools::document()\n\nAll changes ready\n\ndevtools::check()\ndevtools::install()\nPublish code"
   },
   {
     "objectID": "slides/index.html#share-your-package",
