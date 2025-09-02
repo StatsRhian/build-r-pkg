@@ -377,7 +377,7 @@ Don't worry if it doesn't all pass!
 
 ## 👩‍💻 Using other functions
 
-1. Add `cli_success("You added two numbers")`{.r} to `add()`{.r}
+1. Add `cli_alert_success("You added two numbers")`{.r} to `add()`{.r}
 
 1. Run **check**
 
