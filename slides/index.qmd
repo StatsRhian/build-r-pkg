@@ -1,8 +1,8 @@
 ---
-title: "Build your own toolbox 🧰"
-subtitle: "R package development"
+title: "You Can Build an R Package 🚀"
+subtitle: "If You Can Write a Function"
 author: "[Dr Rhian Davies](mailto:statsrhian@gmail.com)"
-date: 2025-09-03
+date: 2026-02-25
 date-format: "YYYY-MM-DD"
 css: styles.css
 format: revealjs
@@ -14,43 +14,60 @@ footer: "{{< fa brands github >}} {{< fa brands bluesky >}} {{< fa brands mastod
 
 ---
 
-## Set-up 👩‍💻
+# Welcome 👋
 
-- Welcome! We'll start the workshop shortly
+🕓16:00 - 18:00 GMT 
 
-- If you want to code along with me, please follow the set-up instructions ⬇️
+🧑‍💻 Code along on [your laptop](https://statsrhian.github.io/build-r-pkg/set-up) or [Posit Cloud](https://posit.cloud/spaces/741339/)
 
-### [statsrhian.github.io/build-r-pkg/set-up](https://statsrhian.github.io/build-r-pkg/set-up)
+💬 Tell me: Have you built a 📦? Why not?
 
-- If you'd prefer to just want to sit back and watch, that's fine too 😊
+## About me
 
-- WiFi: RSS `edin2025`
+:::: {.columns}
+::: {.column}
 
-# Welcome
+🧮 NHS Data Scientist
 
-<!--- TO FIX
+🗣️ Stats communicator
 
-“What’s one function you’d put in your personal package?”
+👩‍💻 #RStats educator
 
-- Rewrite "developer slide"
-- should I mention devtools::load_all()
-- tidy notes
-- add next steps to last slide (resources)
---->
+💜 Community champion
 
-## What is an R package?
+🔗 rhian.rbind.io
+
+:::
+::: {.column}
+![](img/unravel.png){fig-alt="One woman is untangling a big mess of string around a jar of pickles, another woman is smiling and clapping."}
+:::
+::::
+
+🚣‍♀️ 🚴‍♀️🧗‍♀️ 🏊‍♀️🏃‍♀️🚐🎼 🥁 🧶🏳️‍🌈 she/her
+
+
+## About you 💬
+
+- Have you ever tried to build an R package? 
+- If not - why not?
+
+# What is an R package? 
+
+## A tool kit 🧰
 
 ![](img/toolbox-closed.jpg){fig-alt="A toolbox with the lid locked in the closed position."}
 
-## Why build one?
+- Not just any box of random tools
+- A kit that someone else should be able to pick up and use immediately without calling you for help.
 
-- Reproducible
-- Reusability across projects
-- Testing is easier
-- Dependency management
-- Easy to use documentation
-- It's fun and empowering
-- Sharing is caring
+## R packages make it easier to 📦
+
+- run code
+- reuse across projects
+- share with others
+- manage dependencies and versions
+- write nice documentation
+- add tests
 
 ## Myths
 
@@ -71,9 +88,14 @@ It doesn't have to...
 - Package warnings are okay!
 :::
 
-# Your personal toolbox
+## ⚠️ Warning
 
-It’s not just any box of random tools — it’s a kit that someone else should be able to pick up and use immediately without calling you for instructions.
+![](img/got-the-power.gif){fig-alt="Gif from Bruce Almighty film. Jim Carry points with his fingers and a water hydrant explodes. Caption 'I've got the power'"}
+
+Building R packages can feel empowering and can be addictive.
+
+
+# What's inside an R package?
 
 ## What's in your toolbox?
 
@@ -263,16 +285,58 @@ biketools/
 
 # Let's build 🛠️
 
-## 👀 Create an R package
+## 👀 Demo: Create an R package
 
-## 👩‍💻 Create an R package
+- Check we’re not in a project
+- Initialise the package
+- Look at the `DESCRIPTION` file
+- What’s a license?
+- Install the package
 
-- Run `usethis::create_package("sums")`{.r}
-- Open the `DESCRIPTION` file and customise it
+:::{.notes}
+
+What makes a good package name?
+
+:::
+
+## 👩‍💻 Exercise 1
+
+- Run `usethis::create_package("sums")`{.r}^[If you're using Posit Cloud - skip this step!] 
+- Edit the `DESCRIPTION` file
 - Run `usethis::use_mit_license()`{.r}
 - Run `devtools::install()`{.r}
 
-## 👀 Add a function
+```{r}
+#| eval: true
+#| echo: false
+countdown::countdown(minutes = 5, top = 0)
+```
+
+# 🛠️ Adding functions
+
+## What’s a function?
+
+:::: {.columns}
+::: {.column}
+- Has a name
+- Takes some inputs
+- Does something
+- Returns something
+:::
+::: {.column}
+```r
+ add <- function(x, y) {
+  x + y
+}
+```
+:::
+::::
+
+## 👀 Demo: Add a function
+
+- add the `add()` function to the package in `R/`^[We can't use subfolders, but we can put multiple functions in one script]
+- re-install the package
+- does it work?
 
 :::{.notes}
 
@@ -283,7 +347,25 @@ Could manually edit it FIRST `export(hello)`{.r} and then show later how it's ge
 
 :::
 
-## 👩‍💻 Add a function
+## `install` vs `load_all()`
+
+`install()`
+
+ - installs your package to your R library 
+ - to install "ready" packages
+
+`load_all()`
+
+ - loads all functions and data into your environment
+ - good for fast developing
+
+## 👀 Demo: Load all
+
+- Check environment is empty
+- Run `devtools::load_all()`
+- Does `add.R` work now?
+
+## 👩‍💻 Exercise 2
 
 - Copy the `add()`{.r} function in `R/add.R`
 
@@ -293,14 +375,57 @@ Could manually edit it FIRST `export(hello)`{.r} and then show later how it's ge
     }
     ```
 
-- Add `export(add)`{.r} to `NAMESPACE`
-
 - Run `devtools::load_all()`{.r}
 
 - Try out your function `add(3, 4)`{.r}
 
+```{r}
+#| eval: true
+#| echo: false
+countdown::countdown(minutes = 5, top = 0)
+```
 
-## 👀 Document your function
+
+
+# Adding documentation 📄
+
+## Lending out your tools
+ 
+:::: {.columns}
+::: {.column}
+
+- We need to _export_ our function
+- Explicitly saying "you can use this"
+
+:::
+::: {.column}
+![](img/roxygen2.png){fig-alt="Hexsticker for roxygen2. it has the RStudio logo with a 2 in it."}
+:::
+::::
+
+
+## 👀 Demo: Export your function 
+
+- Add `#' @export` tag
+- Re-install and check it works
+- Inspect the `NAMESPACE`
+
+## Help files
+
+- What happens when you run `?dplyr::slice_head`?
+
+## Common roxygen tags
+
+- `@export`: exports the function
+- `@param`: what does an argument do? what are the defaults?
+- `@returns`: what type of object does the function return?
+- `@examples`: show the function in action#
+
+## 👀 Demo: Document your function 
+
+- Add roxygen tags
+- Run `devtools::document()`
+- View help files
 
 :::{.notes}
 
@@ -321,7 +446,7 @@ add <- function(x, y) {
 
 :::
 
-## 👩‍💻 Document your function
+## 👩‍💻 Exercise 3
 
 1. Add some {roxygen2} strings
 
@@ -344,17 +469,22 @@ add <- function(x, y) {
 
 1. View the help file `?add`{.r}
 
+```{r}
+#| eval: true
+#| echo: false
+countdown::countdown(minutes = 5, top = 0)
+```
 
+# Checking your package ✅
 
-## Package check
-
-Inspect your toolbox before lending it out
+## Inspect your toolbox
 
 - Do all the tools work?
 - Does they have instruction manuals?
 - Is there anything in there that shouldn't be in there?
 - Is it too heavy?
 
+`1 error ✖ | 1 warning ✖ | 2 notes ✖`
 
 :::{.notes}
 
@@ -364,24 +494,42 @@ If something fails inspection, you get a report telling you exactly what to fix.
 
 :::
 
-## 👀 Package check
 
-## 👩‍💻 Package check
+## 👀 Demo: Package check
+
+- Run `devtools::check()` 
+- Inspect the output
+
+## 👩‍💻 Exercise 4
 
 1. Run `devtools::check()`{.r}
 
 Don't worry if it doesn't all pass!
 
+```{r}
+#| eval: true
+#| echo: false
+countdown::countdown(minutes = 5, top = 0)
+```
 
-## 👀 Using other functions
+## 👀 Demo: Borrowing other functions
 
-## 👩‍💻 Using other functions
 
-1. Add `cli_alert_success("You added two numbers")`{.r} to `add()`{.r}
+- Add `cli_alert_success("You added two numbers")`{.r} to `add()`{.r}
 
-1. Run **check**
+- Run **check**
 
-1. Prefix with `cli::`{.r}
+- Prefix with `cli::`{.r}
+
+- Run **check**
+
+- Use `usethis::use_package("cli")`{.r} to update `Imports:`
+
+- Run **check**
+
+## 👩‍💻 Exercise 5
+
+1. Add `cli::cli_alert_success("You added two numbers")`{.r} to `add()`{.r}
 
 1. Run **check**
 
@@ -389,22 +537,32 @@ Don't worry if it doesn't all pass!
 
 1. Run **check**
 
-## Usethis
+```{r}
+#| eval: true
+#| echo: false
+countdown::countdown(minutes = 5, top = 0)
+```
 
+# You did it! 🥳
+
+## Share your package 🔁
+
+
+- Local install: `devtools::install_local("biketools.zip")`{.r}
+
+- GitHub: `devtools::install_github("statsrhian/biketools")`{.r}
+
+- CRAN: `install.packages("biketools")`{.r}
+
+
+# Bonus stuff 🎁
+
+## Use {usethis}
 
 :::: {.columns}
 ::: {.column}
 
 - `use_readme_md()`{.r}
-
-- `use_roxygen_md()`{.r}
-
-- `use_news_md()`{.r}
-
-- `use_github_actions()`{.r}
-
-:::
-::: {.column}
 
 - `use_data()`{.r}
 
@@ -414,11 +572,20 @@ Don't worry if it doesn't all pass!
 
 - `use_pkgdown()`{.r}
 
+- `use_news_md()`{.r}
+
+- `use_github_actions()`{.r}
+
+:::
+::: {.column}
+
+![[Artwork by Allison Horst](https://allisonhorst.com/r-packages-functions)](img/usethis-cartoon.png){fig-alt="Cartoon of two fluffy creatures going up a hill. One (called usethis) is giving the other one (called me) a piggyback."}
 :::
 :::: 
 
-## Developer process 🔄
 
+<!---
+## Developer process 🔄
 
 ::::{.columns}
 
@@ -451,19 +618,7 @@ Don't worry if it doesn't all pass!
 
 :::
 ::::
-
-
-## Share your package
-
-::: {.incremental}
-
-- Local install: `devtools::install_local("biketools")`{.r}
-
-- GitHub: `devtools::install_github("statsrhian/biketools")`{.r}
-
-- CRAN: `install.packages("biketools.zip")`{.r}
-
-:::
+--->
 
 ## Go forth and build! 👷‍♀️
 
@@ -476,7 +631,7 @@ Don't worry if it doesn't all pass!
 :::
 
 ::: {.column}
-![](img/hex-RSSConf2025.png){fig-alt="Example hex sticker showing the RSSConf2025 hashtag and and image of Edinburgh Castle" fig-align="right" width=80%}
+![](img/rainbow-hex.png){fig-alt="Example hex sticker showing the rainbowR background hex" fig-align="right" width=80%}
 :::
 :::: 
 

@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Learn to build an R package"
+  title: "If You Can Write a Function, You Can Build an R Package"
   navbar:
     left: 
       - index.qmd
