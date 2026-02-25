@@ -1,4 +1,4 @@
-📦 If You Can Write a Function, You Can Build an R Package
+# 📦 If You Can Write a Function, You Can Build an R Package
 
 Build your first R package — without the fear.
 
