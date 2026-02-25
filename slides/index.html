@@ -6,14 +6,16 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/quarto-contrib/countdown-0.6.0/countdown.js"></script>
+<link href="../site_libs/quarto-contrib/countdown-0.6.0/countdown.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.34">
+  <meta name="generator" content="quarto-1.8.27">
 
   <meta name="author" content="Dr Rhian Davies">
-  <meta name="dcterms.date" content="2025-09-03">
-  <title>Learn to build an R package – Build your own toolbox 🧰</title>
+  <meta name="dcterms.date" content="2026-02-25">
+  <title>If You Can Write a Function, You Can Build an R Package – You Can Build an R Package 🚀</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -98,7 +100,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-cc88b92d56c1c2a7fc700fa5c1c1fe55.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-058ca7ac2ff40f44be957b14def033ac.css">
   <link rel="stylesheet" href="styles.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -197,8 +199,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Build your own toolbox 🧰</h1>
-  <p class="subtitle">R package development</p>
+  <h1 class="title">You Can Build an R Package 🚀</h1>
+  <p class="subtitle">If You Can Write a Function</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -208,47 +210,58 @@
 </div>
 </div>
 
-  <p class="date">2025-09-03</p>
-</section>
-<section id="set-up" class="slide level2">
-<h2>Set-up 👩‍💻</h2>
-<ul>
-<li><p>Welcome! We’ll start the workshop shortly</p></li>
-<li><p>If you want to code along with me, please follow the set-up instructions ⬇️</p></li>
-</ul>
-<h3 id="statsrhian.github.iobuild-r-pkgset-up"><a href="https://statsrhian.github.io/build-r-pkg/set-up">statsrhian.github.io/build-r-pkg/set-up</a></h3>
-<ul>
-<li><p>If you’d prefer to just want to sit back and watch, that’s fine too 😊</p></li>
-<li><p>WiFi: RSS <code>edin2025</code></p></li>
-</ul>
+  <p class="date">2026-02-25</p>
 </section>
 <section>
 <section id="welcome" class="title-slide slide level1 center">
-<h1>Welcome</h1>
-<!--- TO FIX
-
-“What’s one function you’d put in your personal package?”
-
-- Rewrite "developer slide"
-- should I mention devtools::load_all()
-- tidy notes
-- add next steps to last slide (resources)
---->
+<h1>Welcome 👋</h1>
+<p>🕓16:00 - 18:00 GMT</p>
+<p>🧑‍💻 Code along on <a href="https://statsrhian.github.io/build-r-pkg/set-up">your laptop</a> or <a href="https://posit.cloud/spaces/741339/">Posit Cloud</a></p>
+<p>💬 Tell me: Have you built a 📦? Why not?</p>
 </section>
-<section id="what-is-an-r-package" class="slide level2">
-<h2>What is an R package?</h2>
-
-<img data-src="img/toolbox-closed.jpg" alt="A toolbox with the lid locked in the closed position." class="r-stretch"></section>
-<section id="why-build-one" class="slide level2">
-<h2>Why build one?</h2>
+<section id="about-me" class="slide level2">
+<h2>About me</h2>
+<div class="columns">
+<div class="column">
+<p>🧮 NHS Data Scientist</p>
+<p>🗣️ Stats communicator</p>
+<p>👩‍💻 #RStats educator</p>
+<p>💜 Community champion</p>
+<p>🔗 rhian.rbind.io</p>
+</div><div class="column">
+<p><img data-src="img/unravel.png" alt="One woman is untangling a big mess of string around a jar of pickles, another woman is smiling and clapping."></p>
+</div></div>
+<p>🚣‍♀️ 🚴‍♀️🧗‍♀️ 🏊‍♀️🏃‍♀️🚐🎼 🥁 🧶🏳️‍🌈 she/her</p>
+</section>
+<section id="about-you" class="slide level2">
+<h2>About you 💬</h2>
 <ul>
-<li>Reproducible</li>
-<li>Reusability across projects</li>
-<li>Testing is easier</li>
-<li>Dependency management</li>
-<li>Easy to use documentation</li>
-<li>It’s fun and empowering</li>
-<li>Sharing is caring</li>
+<li>Have you ever tried to build an R package?</li>
+<li>If not - why not?</li>
+</ul>
+</section></section>
+<section>
+<section id="what-is-an-r-package" class="title-slide slide level1 center">
+<h1>What is an R package?</h1>
+
+</section>
+<section id="a-tool-kit" class="slide level2">
+<h2>A tool kit 🧰</h2>
+
+<img data-src="img/toolbox-closed.jpg" alt="A toolbox with the lid locked in the closed position." class="r-stretch"><ul>
+<li>Not just any box of random tools</li>
+<li>A kit that someone else should be able to pick up and use immediately without calling you for help.</li>
+</ul>
+</section>
+<section id="r-packages-make-it-easier-to" class="slide level2">
+<h2>R packages make it easier to 📦</h2>
+<ul>
+<li>run code</li>
+<li>reuse across projects</li>
+<li>share with others</li>
+<li>manage dependencies and versions</li>
+<li>write nice documentation</li>
+<li>add tests</li>
 </ul>
 </section>
 <section id="myths" class="slide level2">
@@ -278,11 +291,16 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="warning" class="slide level2">
+<h2>⚠️ Warning</h2>
+
+<img data-src="img/got-the-power.gif" alt="Gif from Bruce Almighty film. Jim Carry points with his fingers and a water hydrant explodes. Caption 'I've got the power'" class="r-stretch"><p>Building R packages can feel empowering and can be addictive.</p>
 </section></section>
 <section>
-<section id="your-personal-toolbox" class="title-slide slide level1 center">
-<h1>Your personal toolbox</h1>
-<p>It’s not just any box of random tools — it’s a kit that someone else should be able to pick up and use immediately without calling you for instructions.</p>
+<section id="whats-inside-an-r-package" class="title-slide slide level1 center">
+<h1>What’s inside an R package?</h1>
+
 </section>
 <section id="whats-in-your-toolbox" class="slide level2">
 <h2>What’s in your toolbox?</h2>
@@ -488,20 +506,68 @@
 <h1>Let’s build 🛠️</h1>
 
 </section>
-<section id="create-an-r-package" class="slide level2">
-<h2>👀 Create an R package</h2>
-</section>
-<section id="create-an-r-package-1" class="slide level2">
-<h2>👩‍💻 Create an R package</h2>
+<section id="demo-create-an-r-package" class="slide level2">
+<h2>👀 Demo: Create an R package</h2>
 <ul>
-<li>Run <code class="sourceCode r">usethis<span class="sc">::</span><span class="fu">create_package</span>(<span class="st">"sums"</span>)</code></li>
-<li>Open the <code>DESCRIPTION</code> file and customise it</li>
+<li>Check we’re not in a project</li>
+<li>Initialise the package</li>
+<li>Look at the <code>DESCRIPTION</code> file</li>
+<li>What’s a license?</li>
+<li>Install the package</li>
+</ul>
+<aside class="notes">
+<p>What makes a good package name?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="exercise-1" class="slide level2">
+<h2>👩‍💻 Exercise 1</h2>
+<ul>
+<li>Run <code class="sourceCode r">usethis<span class="sc">::</span><span class="fu">create_package</span>(<span class="st">"sums"</span>)</code><sup>1</sup></li>
+<li>Edit the <code>DESCRIPTION</code> file</li>
 <li>Run <code class="sourceCode r">usethis<span class="sc">::</span><span class="fu">use_mit_license</span>()</code></li>
 <li>Run <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">install</span>()</code></li>
 </ul>
+<countdown-timer id="timer_d1e1118a906c52b726be34df361a299914eebcd6" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="top: 0;right: 0;">
+ </countdown-timer>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>If you’re using Posit Cloud - skip this step!</p></li></ol></aside></section></section>
+<section>
+<section id="adding-functions" class="title-slide slide level1 center">
+<h1>🛠️ Adding functions</h1>
+
 </section>
-<section id="add-a-function" class="slide level2">
-<h2>👀 Add a function</h2>
+<section id="whats-a-function" class="slide level2">
+<h2>What’s a function?</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>Has a name</li>
+<li>Takes some inputs</li>
+<li>Does something</li>
+<li>Returns something</li>
+</ul>
+</div><div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a> add <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb1-2"><a></a>  x <span class="sc">+</span> y</span>
+<span id="cb1-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div></div>
+</section>
+<section id="demo-add-a-function" class="slide level2">
+<h2>👀 Demo: Add a function</h2>
+<ul>
+<li>add the <code>add()</code> function to the package in <code>R/</code><sup>1</sup></li>
+<li>re-install the package</li>
+<li>does it work?</li>
+</ul>
 <aside class="notes">
 <p>Need to introduce adding functions without getting hung up on <code class="sourceCode r"><span class="co">#' @export</span></code> and <code>NAMESPACE</code></p>
 <p>Could manually edit it FIRST <code class="sourceCode r"><span class="fu">export</span>(hello)</code> and then show later how it’s generated</p>
@@ -516,34 +582,101 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>We can’t use subfolders, but we can put multiple functions in one script</p></li></ol></aside></section>
+<section id="install-vs-load_all" class="slide level2">
+<h2><code>install</code> vs <code>load_all()</code></h2>
+<p><code>install()</code></p>
+<ul>
+<li>installs your package to your R library</li>
+<li>to install “ready” packages</li>
+</ul>
+<p><code>load_all()</code></p>
+<ul>
+<li>loads all functions and data into your environment</li>
+<li>good for fast developing</li>
+</ul>
 </section>
-<section id="add-a-function-1" class="slide level2">
-<h2>👩‍💻 Add a function</h2>
+<section id="demo-load-all" class="slide level2">
+<h2>👀 Demo: Load all</h2>
+<ul>
+<li>Check environment is empty</li>
+<li>Run <code>devtools::load_all()</code></li>
+<li>Does <code>add.R</code> work now?</li>
+</ul>
+</section>
+<section id="exercise-2" class="slide level2">
+<h2>👩‍💻 Exercise 2</h2>
 <ul>
 <li><p>Copy the <code class="sourceCode r"><span class="fu">add</span>()</code> function in <code>R/add.R</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
-<span id="cb1-2"><a></a>  x <span class="sc">+</span> y</span>
-<span id="cb1-3"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Add <code class="sourceCode r"><span class="fu">export</span>(add)</code> to <code>NAMESPACE</code></p></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb2-2"><a></a>  x <span class="sc">+</span> y</span>
+<span id="cb2-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Run <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">load_all</span>()</code></p></li>
 <li><p>Try out your function <code class="sourceCode r"><span class="fu">add</span>(<span class="dv">3</span>, <span class="dv">4</span>)</code></p></li>
 </ul>
+<countdown-timer id="timer_d1e1118a906c52b726be34df361a299914eebcd6" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="top: 0;right: 0;">
+ </countdown-timer>
+</section></section>
+<section>
+<section id="adding-documentation" class="title-slide slide level1 center">
+<h1>Adding documentation 📄</h1>
+
 </section>
-<section id="document-your-function" class="slide level2">
-<h2>👀 Document your function</h2>
+<section id="lending-out-your-tools" class="slide level2">
+<h2>Lending out your tools</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>We need to <em>export</em> our function</li>
+<li>Explicitly saying “you can use this”</li>
+</ul>
+</div><div class="column">
+<p><img data-src="img/roxygen2.png" alt="Hexsticker for roxygen2. it has the RStudio logo with a 2 in it."></p>
+</div></div>
+</section>
+<section id="demo-export-your-function" class="slide level2">
+<h2>👀 Demo: Export your function</h2>
+<ul>
+<li>Add <code>#' @export</code> tag</li>
+<li>Re-install and check it works</li>
+<li>Inspect the <code>NAMESPACE</code></li>
+</ul>
+</section>
+<section id="help-files" class="slide level2">
+<h2>Help files</h2>
+<ul>
+<li>What happens when you run <code>?dplyr::slice_head</code>?</li>
+</ul>
+</section>
+<section id="common-roxygen-tags" class="slide level2">
+<h2>Common roxygen tags</h2>
+<ul>
+<li><code>@export</code>: exports the function</li>
+<li><code>@param</code>: what does an argument do? what are the defaults?</li>
+<li><code>@returns</code>: what type of object does the function return?</li>
+<li><code>@examples</code>: show the function in action#</li>
+</ul>
+</section>
+<section id="demo-document-your-function" class="slide level2">
+<h2>👀 Demo: Document your function</h2>
+<ul>
+<li>Add roxygen tags</li>
+<li>Run <code>devtools::document()</code></li>
+<li>View help files</li>
+</ul>
 <aside class="notes">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co">#' Add together two numbers</span></span>
-<span id="cb2-2"><a></a><span class="co">#' </span></span>
-<span id="cb2-3"><a></a><span class="co">#' @param x A number.</span></span>
-<span id="cb2-4"><a></a><span class="co">#' @param y A number.</span></span>
-<span id="cb2-5"><a></a><span class="co">#' @returns A numeric vector.</span></span>
-<span id="cb2-6"><a></a><span class="co">#' @examples</span></span>
-<span id="cb2-7"><a></a><span class="co">#' add(1, 1)</span></span>
-<span id="cb2-8"><a></a><span class="co">#' add(10, 1)</span></span>
-<span id="cb2-9"><a></a><span class="co">#' @export</span></span>
-<span id="cb2-10"><a></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
-<span id="cb2-11"><a></a>  x <span class="sc">+</span> y</span>
-<span id="cb2-12"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co">#' Add together two numbers</span></span>
+<span id="cb3-2"><a></a><span class="co">#' </span></span>
+<span id="cb3-3"><a></a><span class="co">#' @param x A number.</span></span>
+<span id="cb3-4"><a></a><span class="co">#' @param y A number.</span></span>
+<span id="cb3-5"><a></a><span class="co">#' @returns A numeric vector.</span></span>
+<span id="cb3-6"><a></a><span class="co">#' @examples</span></span>
+<span id="cb3-7"><a></a><span class="co">#' add(1, 1)</span></span>
+<span id="cb3-8"><a></a><span class="co">#' add(10, 1)</span></span>
+<span id="cb3-9"><a></a><span class="co">#' @export</span></span>
+<span id="cb3-10"><a></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb3-11"><a></a>  x <span class="sc">+</span> y</span>
+<span id="cb3-12"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -556,35 +689,42 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="document-your-function-1" class="slide level2">
-<h2>👩‍💻 Document your function</h2>
+<section id="exercise-3" class="slide level2">
+<h2>👩‍💻 Exercise 3</h2>
 <ol type="1">
 <li><p>Add some {roxygen2} strings</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co">#' Add together two numbers</span></span>
-<span id="cb3-2"><a></a><span class="co">#' </span></span>
-<span id="cb3-3"><a></a><span class="co">#' @param x A number.</span></span>
-<span id="cb3-4"><a></a><span class="co">#' @param y A number.</span></span>
-<span id="cb3-5"><a></a><span class="co">#' @returns A numeric vector.</span></span>
-<span id="cb3-6"><a></a><span class="co">#' @examples</span></span>
-<span id="cb3-7"><a></a><span class="co">#' add(1, 1)</span></span>
-<span id="cb3-8"><a></a><span class="co">#' add(10, 1)</span></span>
-<span id="cb3-9"><a></a><span class="co">#' @export</span></span>
-<span id="cb3-10"><a></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
-<span id="cb3-11"><a></a>  x <span class="sc">+</span> y</span>
-<span id="cb3-12"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co">#' Add together two numbers</span></span>
+<span id="cb4-2"><a></a><span class="co">#' </span></span>
+<span id="cb4-3"><a></a><span class="co">#' @param x A number.</span></span>
+<span id="cb4-4"><a></a><span class="co">#' @param y A number.</span></span>
+<span id="cb4-5"><a></a><span class="co">#' @returns A numeric vector.</span></span>
+<span id="cb4-6"><a></a><span class="co">#' @examples</span></span>
+<span id="cb4-7"><a></a><span class="co">#' add(1, 1)</span></span>
+<span id="cb4-8"><a></a><span class="co">#' add(10, 1)</span></span>
+<span id="cb4-9"><a></a><span class="co">#' @export</span></span>
+<span id="cb4-10"><a></a>add <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb4-11"><a></a>  x <span class="sc">+</span> y</span>
+<span id="cb4-12"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Run <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">document</span>()</code>; <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">load_all</span>()</code></p></li>
 <li><p>View the help file <code class="sourceCode r">?add</code></p></li>
 </ol>
+<countdown-timer id="timer_d1e1118a906c52b726be34df361a299914eebcd6" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="top: 0;right: 0;">
+ </countdown-timer>
+</section></section>
+<section>
+<section id="checking-your-package" class="title-slide slide level1 center">
+<h1>Checking your package ✅</h1>
+
 </section>
-<section id="package-check" class="slide level2">
-<h2>Package check</h2>
-<p>Inspect your toolbox before lending it out</p>
+<section id="inspect-your-toolbox" class="slide level2">
+<h2>Inspect your toolbox</h2>
 <ul>
 <li>Do all the tools work?</li>
 <li>Does they have instruction manuals?</li>
 <li>Is there anything in there that shouldn’t be in there?</li>
 <li>Is it too heavy?</li>
 </ul>
+<p><code>1 error ✖ | 1 warning ✖ | 2 notes ✖</code></p>
 <aside class="notes">
 <p>An inspection before lending the box, ensures all tools are there and safe.</p>
 <p>If something fails inspection, you get a report telling you exactly what to fix.</p>
@@ -600,85 +740,118 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="package-check-1" class="slide level2">
-<h2>👀 Package check</h2>
+<section id="demo-package-check" class="slide level2">
+<h2>👀 Demo: Package check</h2>
+<ul>
+<li>Run <code>devtools::check()</code></li>
+<li>Inspect the output</li>
+</ul>
 </section>
-<section id="package-check-2" class="slide level2">
-<h2>👩‍💻 Package check</h2>
+<section id="exercise-4" class="slide level2">
+<h2>👩‍💻 Exercise 4</h2>
 <ol type="1">
 <li>Run <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">check</span>()</code></li>
 </ol>
 <p>Don’t worry if it doesn’t all pass!</p>
+<countdown-timer id="timer_d1e1118a906c52b726be34df361a299914eebcd6" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="top: 0;right: 0;">
+ </countdown-timer>
 </section>
-<section id="using-other-functions" class="slide level2">
-<h2>👀 Using other functions</h2>
-</section>
-<section id="using-other-functions-1" class="slide level2">
-<h2>👩‍💻 Using other functions</h2>
-<ol type="1">
+<section id="demo-borrowing-other-functions" class="slide level2">
+<h2>👀 Demo: Borrowing other functions</h2>
+<ul>
 <li><p>Add <code class="sourceCode r"><span class="fu">cli_alert_success</span>(<span class="st">"You added two numbers"</span>)</code> to <code class="sourceCode r"><span class="fu">add</span>()</code></p></li>
 <li><p>Run <strong>check</strong></p></li>
 <li><p>Prefix with <code class="sourceCode r">cli<span class="sc">::</span></code></p></li>
 <li><p>Run <strong>check</strong></p></li>
 <li><p>Use <code class="sourceCode r">usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">"cli"</span>)</code> to update <code>Imports:</code></p></li>
 <li><p>Run <strong>check</strong></p></li>
-</ol>
+</ul>
 </section>
-<section id="usethis" class="slide level2">
-<h2>Usethis</h2>
+<section id="exercise-5" class="slide level2">
+<h2>👩‍💻 Exercise 5</h2>
+<ol type="1">
+<li><p>Add <code class="sourceCode r">cli<span class="sc">::</span><span class="fu">cli_alert_success</span>(<span class="st">"You added two numbers"</span>)</code> to <code class="sourceCode r"><span class="fu">add</span>()</code></p></li>
+<li><p>Run <strong>check</strong></p></li>
+<li><p>Use <code class="sourceCode r">usethis<span class="sc">::</span><span class="fu">use_package</span>(<span class="st">"cli"</span>)</code> to update <code>Imports:</code></p></li>
+<li><p>Run <strong>check</strong></p></li>
+</ol>
+<countdown-timer id="timer_d1e1118a906c52b726be34df361a299914eebcd6" minutes="05" seconds="00" class="countdown" warn-when="0" update-every="1" play-sound="false" blink-colon="false" start-immediately="false" tabindex="0" style="top: 0;right: 0;">
+ </countdown-timer>
+</section></section>
+<section>
+<section id="you-did-it" class="title-slide slide level1 center">
+<h1>You did it! 🥳</h1>
+
+</section>
+<section id="share-your-package" class="slide level2">
+<h2>Share your package 🔁</h2>
+<ul>
+<li><p>Local install: <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">install_local</span>(<span class="st">"biketools.zip"</span>)</code></p></li>
+<li><p>GitHub: <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"statsrhian/biketools"</span>)</code></p></li>
+<li><p>CRAN: <code class="sourceCode r"><span class="fu">install.packages</span>(<span class="st">"biketools"</span>)</code></p></li>
+</ul>
+</section></section>
+<section>
+<section id="bonus-stuff" class="title-slide slide level1 center">
+<h1>Bonus stuff 🎁</h1>
+
+</section>
+<section id="use-usethis" class="slide level2">
+<h2>Use {usethis}</h2>
 <div class="columns">
 <div class="column">
 <ul>
 <li><p><code class="sourceCode r"><span class="fu">use_readme_md</span>()</code></p></li>
-<li><p><code class="sourceCode r"><span class="fu">use_roxygen_md</span>()</code></p></li>
-<li><p><code class="sourceCode r"><span class="fu">use_news_md</span>()</code></p></li>
-<li><p><code class="sourceCode r"><span class="fu">use_github_actions</span>()</code></p></li>
-</ul>
-</div><div class="column">
-<ul>
 <li><p><code class="sourceCode r"><span class="fu">use_data</span>()</code></p></li>
 <li><p><code class="sourceCode r"><span class="fu">use_testthat</span>()</code></p></li>
 <li><p><code class="sourceCode r"><span class="fu">use_vignettes</span>()</code></p></li>
 <li><p><code class="sourceCode r"><span class="fu">use_pkgdown</span>()</code></p></li>
+<li><p><code class="sourceCode r"><span class="fu">use_news_md</span>()</code></p></li>
+<li><p><code class="sourceCode r"><span class="fu">use_github_actions</span>()</code></p></li>
 </ul>
-</div></div>
-</section>
-<section id="developer-process" class="slide level2">
-<h2>Developer process 🔄</h2>
-<div class="columns">
-<div class="column">
-<h3 id="editing-code">Editing code</h3>
-<ol type="1">
-<li>Make code changes</li>
-<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">load_all</span>()</code></li>
-</ol>
-<h3 id="add-new-function">Add new function</h3>
-<ol type="1">
-<li>Create and <code class="sourceCode r"><span class="sc">@</span>export</code></li>
-<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">document</span>()</code></li>
-<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">load_all</span>()</code></li>
-</ol>
 </div><div class="column">
-<h3 id="editing-docs">Editing docs</h3>
-<ol type="1">
-<li>Edit function docs</li>
-<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">document</span>()</code></li>
-</ol>
-<h3 id="all-changes-ready">All changes ready</h3>
-<ol type="1">
-<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">check</span>()</code></li>
-<li><code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">install</span>()</code></li>
-<li>Publish code</li>
-</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/usethis-cartoon.png" alt="Cartoon of two fluffy creatures going up a hill. One (called usethis) is giving the other one (called me) a piggyback."></p>
+<figcaption><a href="https://allisonhorst.com/r-packages-functions">Artwork by Allison Horst</a></figcaption>
+</figure>
+</div>
 </div></div>
-</section>
-<section id="share-your-package" class="slide level2">
-<h2>Share your package</h2>
-<ul>
-<li class="fragment"><p>Local install: <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">install_local</span>(<span class="st">"biketools"</span>)</code></p></li>
-<li class="fragment"><p>GitHub: <code class="sourceCode r">devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"statsrhian/biketools"</span>)</code></p></li>
-<li class="fragment"><p>CRAN: <code class="sourceCode r"><span class="fu">install.packages</span>(<span class="st">"biketools.zip"</span>)</code></p></li>
-</ul>
+<!---
+## Developer process 🔄
+
+::::{.columns}
+
+:::{.column}
+### Editing code
+
+1. Make code changes
+1. `devtools::load_all()`{.r}
+
+### Add new function
+
+1. Create  and `@export`{.r}
+1. `devtools::document()`{.r}
+1. `devtools::load_all()`{.r}
+
+:::
+
+:::{.column}
+
+### Editing docs
+
+1. Edit function docs
+1. `devtools::document()`{.r}
+
+### All changes ready
+
+1. `devtools::check()`{.r}
+1. `devtools::install()`{.r}
+1. Publish code
+
+:::
+::::
+--->
 </section>
 <section id="go-forth-and-build" class="slide level2">
 <h2>Go forth and build! 👷‍♀️</h2>
@@ -691,13 +864,14 @@
 </div><div class="column">
 <div class="quarto-figure quarto-figure-right">
 <figure>
-<p><img data-src="img/hex-RSSConf2025.png" class="quarto-figure quarto-figure-right" style="width:80.0%" alt="Example hex sticker showing the RSSConf2025 hashtag and and image of Edinburgh Castle"></p>
+<p><img data-src="img/rainbow-hex.png" class="quarto-figure quarto-figure-right" style="width:80.0%" alt="Example hex sticker showing the rainbowR background hex"></p>
 </figure>
 </div>
 </div></div>
 
 
 </section></section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -887,7 +1061,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -961,13 +1135,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
