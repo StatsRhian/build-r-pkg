@@ -35,7 +35,7 @@ footer: "{{< fa brands github >}} {{< fa brands bluesky >}} {{< fa brands mastod
 
 💜 Community champion
 
-🔗 rhian.rbind.io
+🔗 [rhian.rbind.io](https://rhian.rbind.io)
 
 :::
 ::: {.column}
